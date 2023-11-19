@@ -1,57 +1,35 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 import "../../assets/style/login.css";
 import log from "../../assets/image/login.png";
 import goggleImg from "../../assets/image/google.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
 
-const url = "https://652fea546c756603295ded28.mockapi.io/dataStrotage";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const URL = import.meta.env.VITE_BASE_URL;
 
-  const getUsers = async () => {
+  const handleSubmit = async () => {
+    setLoading(true);
     try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
+      const data = {
+        email,
+        password,
+      };
+      const response = await axios.post(`${URL}/api/v1/auth/login`, data);
+      Cookies.set("token", response.data?.data?.access_token, { expires: 1 });
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
-
-  const validateUser = async (email, password) => {
-    const users = await getUsers();
-    return users.filter(
-      (user) => user.email === email && user.password === password
-    );
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const validUser = await validateUser(email, password);
-    console.log(validUser);
-
-    if (validUser.length > 0) {
-      saveRegistrationStatus(validUser[0]);
-    } else {
-      alert("Login gagal");
-    }
-  };
-
-  const saveRegistrationStatus = (user) => {
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
-    alert("login berhasil");
-    window.location.href = window.location.href.replace(
-      "/page/login.html",
-      "/"
-    );
+    setLoading(false);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <section id="hero">
         <section className="container-fluid min-vh-100">
           <div className="row">
@@ -77,6 +55,7 @@ function Login() {
                     placeholder="Masukkan Email"
                     required
                     value={email}
+                    disabled={loading}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
@@ -92,6 +71,7 @@ function Login() {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    disabled={loading}
                   />
                 </div>
                 <div className="container" id="email_wrapper">
@@ -121,18 +101,14 @@ function Login() {
                 </div>
                 <div className="button container-fluid">
                   <div className="row">
-                    <button
-                      type="submit"
-                      className="btn btn-primary col-lg-12"
-                      id="button"
-                    >
-                      Login
+                    <button className="btn btn-primary" type="button" disabled={loading} onClick={handleSubmit}>
+                      {loading && <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>}
+                      <span role="status"> {loading ? 'Loading...' : 'Login'}</span>
                     </button>
                   </div>
                   <span className="d-flex justify-content-center py-2">or</span>
                   <div className="row">
                     <button
-                      type="submit"
                       className="btn btn-close-white border-primary border-2 col-lg-12"
                     >
                       <img src={goggleImg} alt="Google Logo" />
