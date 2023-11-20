@@ -1,71 +1,41 @@
 import React, { useState } from "react";
 import log from "../../assets/image/login.png";
 import goggleImg from "../../assets/image/google.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const URL = import.meta.env.VITE_BASE_URL;
+  const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    if (validateEmail(email) && validatePassword(password)) {
-      sendDataToServer(email, password, firstName, lastName);
+    try {
+      const data = {
+        firstName,
+        lastName,
+        email,
+        password,
+      };
+      const response = await axios.post(`${URL}/api/v1/auth/register`, data);
+      console.log(response.data);
+
+      if (response.data.success) {
+        console.log("Signup berhasil");
+        history.push("/login");
+      } else {
+        console.log("Signup gagal");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
-  };
-
-  const validateEmail = (email) => {
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailPattern.test(email)) {
-      alert("Email tidak valid.");
-    }
-    return emailPattern.test(email);
-  };
-
-  const validatePassword = (password) => {
-    if (password.length < 6) {
-      alert("Password minimal 12 karakter.");
-    }
-    return password.length >= 12;
-  };
-
-  const sendDataToServer = (email, password, firstName, lastName) => {
-    const serverURL =
-      "https://652fea546c756603295ded28.mockapi.io/dataStrotage"; // Ganti dengan URL API yang sesuai
-
-    fetch(serverURL, {
-      method: "POST",
-      body: JSON.stringify({ email, password, firstName, lastName }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        saveRegistrationStatus(email);
-        console.log(data);
-        alert("Registrasi berhasil.");
-        window.location.href = "login.html";
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("Terjadi kesalahan saat mengirim data.");
-      });
-  };
-
-  const saveRegistrationStatus = (email) => {
-    const registrationStatus = {
-      email,
-      registered: true,
-    };
-
-    localStorage.setItem(
-      "registrationStatus",
-      JSON.stringify(registrationStatus)
-    );
   };
 
   return (

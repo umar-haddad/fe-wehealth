@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +22,7 @@ function Login() {
       const response = await axios.post(`${URL}/api/v1/auth/login`, data);
       Cookies.set("token", response.data?.data?.access_token, { expires: 1 });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
     setLoading(false);
   };
@@ -101,16 +100,27 @@ function Login() {
                 </div>
                 <div className="button container-fluid">
                   <div className="row">
-                    <button className="btn btn-primary" type="button" disabled={loading} onClick={handleSubmit}>
-                      {loading && <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>}
-                      <span role="status"> {loading ? 'Loading...' : 'Login'}</span>
+                    <button
+                      className="btn btn-primary"
+                      type="button"
+                      disabled={loading}
+                      onClick={handleSubmit}
+                    >
+                      {loading && (
+                        <span
+                          className="spinner-border spinner-border-sm"
+                          aria-hidden="true"
+                        ></span>
+                      )}
+                      <span role="status">
+                        {" "}
+                        {loading ? "Loading..." : "Login"}
+                      </span>
                     </button>
                   </div>
                   <span className="d-flex justify-content-center py-2">or</span>
                   <div className="row">
-                    <button
-                      className="btn btn-close-white border-primary border-2 col-lg-12"
-                    >
+                    <button className="btn btn-close-white border-primary border-2 col-lg-12">
                       <img src={goggleImg} alt="Google Logo" />
                       Log in with Google
                     </button>
