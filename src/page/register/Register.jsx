@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import log from "../../assets/image/login.png";
 import goggleImg from "../../assets/image/google.png";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -9,7 +9,7 @@ const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const URL = import.meta.env.VITE_BASE_URL;
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ const Register = () => {
 
       if (response.data.success) {
         console.log("Signup berhasil");
-        history.push("/login");
+        navigate("/login");
       } else {
         console.log("Signup gagal");
       }
