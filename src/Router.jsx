@@ -1,14 +1,12 @@
-import { Route, Routes } from "react-router-dom"
-import Contoh from "./page/contoh/Contoh"
-import LandingPage from "./page/home/LandingPage"
+import { Route, Routes } from 'react-router-dom';
+import Homepages from './page/home/Homepages';
 
 const Router = () => {
-   return (
-      <Routes>
-         <Route path="/" element={<Contoh />} />
-         <Route path="/home" element={<LandingPage />} />
-      </Routes>
-   )
-}
+  return (
+    <Routes>
+      <Route path='/' element={<Homepages />} />
+    </Routes>
+  );
+};
 
-export default Router
+export default Router;
