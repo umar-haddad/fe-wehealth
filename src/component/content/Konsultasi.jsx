@@ -44,7 +44,11 @@ function Konsultasi() {
 
   return (
     <div>
-      <section id='konsultasi' className='konsultasi section-padding'>
+      <section
+        id='konsultasi'
+        className='konsultasi section-padding'
+        data-aos='zoom-in'
+      >
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>

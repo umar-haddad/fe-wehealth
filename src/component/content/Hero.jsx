@@ -16,7 +16,7 @@ function Hero() {
     <Carousel className='home' activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img src={home1} className='w-100' alt='Gambar Solusi Kesehatan' />
-        <Carousel.Caption>
+        <Carousel.Caption className='carousel-caption'>
           <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
           <p>
             Kesehatan yang Terpadu di Satu Tempat. Kami Ada untuk Menjaga Anda
@@ -30,7 +30,7 @@ function Hero() {
       </Carousel.Item>
       <Carousel.Item>
         <img src={home2} className='w-100' alt='Gambar Solusi Kesehatan' />
-        <Carousel.Caption>
+        <Carousel.Caption className='carousel-caption'>
           <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
           <p>
             Kesehatan yang Terpadu di Satu Tempat. Kami Ada untuk Menjaga Anda
@@ -44,7 +44,7 @@ function Hero() {
       </Carousel.Item>
       <Carousel.Item>
         <img src={home3} className='w-100' alt='Gambar Solusi Kesehatan' />
-        <Carousel.Caption>
+        <Carousel.Caption className='carousel-caption'>
           <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
           <p>
             Kesehatan yang Terpadu di Satu Tempat. Kami Ada untuk Menjaga Anda

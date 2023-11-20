@@ -46,7 +46,11 @@ function Article() {
 
   return (
     <div>
-      <section id='article' className='article section-padding'>
+      <section
+        id='article'
+        className='article section-padding'
+        data-aos='zoom-in'
+      >
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>
