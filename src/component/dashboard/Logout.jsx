@@ -8,9 +8,9 @@ const Logout = ({ children }) => {
          okText="Logout"
          cancelText="Batal"
          title="Yakin ingin keluar ?"
-         onConfirm={
-            console.log('logout')
-         }
+      // onConfirm={
+      //    console.log('logout')
+      // }
       >
          <Link className="link-logout">{children}</Link>
       </Popconfirm>
