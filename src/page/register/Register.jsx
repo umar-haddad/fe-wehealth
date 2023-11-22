@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import log from "../../assets/image/login.png";
-import goggleImg from "../../assets/image/google.png";
+// import goggleImg from "../../assets/image/google.png";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [loading, setLoading] = useState(false);
   const URL = import.meta.env.VITE_BASE_URL;
   const navigate = useNavigate();
 
@@ -17,20 +19,16 @@ const Register = () => {
 
     try {
       const data = {
-        firstName,
-        lastName,
+        first_name: firstName,
+        last_name: lastName,
         email,
         password,
       };
       const response = await axios.post(`${URL}/api/v1/auth/register`, data);
       console.log(response.data);
 
-      if (response.data.success) {
-        console.log("Signup berhasil");
-        navigate("/login");
-      } else {
-        console.log("Signup gagal");
-      }
+      console.log("Signup berhasil");
+      navigate("/login");
     } catch (error) {
       console.log(error);
     } finally {
@@ -89,6 +87,7 @@ const Register = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  disabled={loading}
                 />
               </div>
               <div className="col-12">
@@ -103,6 +102,7 @@ const Register = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  disabled={loading}
                 />
               </div>
               <div className="col-12">
@@ -124,7 +124,7 @@ const Register = () => {
                     Register
                   </button>
                 </div>
-                <span className="d-flex justify-content-center py-2">or</span>
+                {/* <span className="d-flex justify-content-center py-2">or</span>
                 <div className="row">
                   <button
                     type="submit"
@@ -132,7 +132,7 @@ const Register = () => {
                   >
                     <img src={goggleImg} alt="" /> Log in with Google
                   </button>
-                </div>
+                </div> */}
                 <div className="line_border_bottom"></div>
                 <div className="signup row">
                   <span className=" col-lg-12 px-lg-2 ">

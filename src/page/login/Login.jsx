@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "../../assets/style/login.css";
 import log from "../../assets/image/login.png";
-import goggleImg from "../../assets/image/google.png";
-import { Link } from "react-router-dom";
+// import goggleImg from "../../assets/image/google.png";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -11,6 +11,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const URL = import.meta.env.VITE_BASE_URL;
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -21,6 +22,7 @@ function Login() {
       };
       const response = await axios.post(`${URL}/api/v1/auth/login`, data);
       Cookies.set("token", response.data?.data?.access_token, { expires: 1 });
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -118,13 +120,13 @@ function Login() {
                       </span>
                     </button>
                   </div>
-                  <span className="d-flex justify-content-center py-2">or</span>
+                  {/* <span className="d-flex justify-content-center py-2">or</span>
                   <div className="row">
                     <button className="btn btn-close-white border-primary border-2 col-lg-12">
                       <img src={goggleImg} alt="Google Logo" />
                       Log in with Google
                     </button>
-                  </div>
+                  </div> */}
                   <div className="line_border_bottom"></div>
                   <div className="signup row">
                     <span className="col-lg-12 px-lg-2">
