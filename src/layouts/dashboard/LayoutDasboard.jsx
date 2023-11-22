@@ -74,7 +74,7 @@ function LayoutDasboard(props) {
                   items2={items2}
                   handleClickMenu={handleClickMenu}
                   defaultMenu={"mnuDashboard"}
-                  defaultOpen={["dashboard"]}
+                  defaultOpen={["mnuDashboard"]}
                />
             </div>
          </Drawer>
@@ -100,8 +100,8 @@ function LayoutDasboard(props) {
                   theme="dark"
                   items2={items2}
                   handleClickMenu={handleClickMenu}
-                  defaultMenu={"defaultFinanceMenu"}
-                  defaultOpen={["Master"]}
+                  defaultMenu={"mnuDashboard"}
+                  defaultOpen={["mnuDashboard"]}
                />
             </div>
          </Sider>
