@@ -1,5 +1,3 @@
-import logo from '../../assets/img/logo.png';
-
 function Footer() {
   return (
     <div>
@@ -10,7 +8,7 @@ function Footer() {
               <div className='row mt-3'>
                 <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
                   <div className='logo'>
-                    <img src={logo} alt='WeHealth Logo' />
+                    <img src='/assets/img/logo.png' alt='WeHealth Logo' />
                   </div>
                   <div className='logocaption'>
                     <p className='mt-4'>

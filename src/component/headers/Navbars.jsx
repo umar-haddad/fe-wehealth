@@ -1,13 +1,11 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
-import logo from '../../assets/img/logo.png';
-
 function Navbars() {
   return (
     <Navbar expand='lg' className='navbar navbar-expand-lg bg-white fixed-top'>
       <Container>
-        <img src={logo} alt='logo WeHealth' />
+        <img src='/assets/img/logo.png' alt='logo WeHealth' />
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <ul className='ms-auto text-center navbar-nav'>

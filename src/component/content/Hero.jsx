@@ -1,7 +1,3 @@
-import home1 from '../../assets/img/home1.png';
-import home2 from '../../assets/img/home2.png';
-import home3 from '../../assets/img/home3.png';
-
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -15,7 +11,11 @@ function Hero() {
   return (
     <Carousel className='home' activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img src={home1} className='w-100' alt='Gambar Solusi Kesehatan' />
+        <img
+          src='/assets/img/home1.png'
+          className='w-100'
+          alt='Gambar Solusi Kesehatan'
+        />
         <Carousel.Caption className='carousel-caption'>
           <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
           <p>
@@ -29,7 +29,11 @@ function Hero() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={home2} className='w-100' alt='Gambar Solusi Kesehatan' />
+        <img
+          src='/assets/img/home2.png'
+          className='w-100'
+          alt='Gambar Solusi Kesehatan'
+        />
         <Carousel.Caption className='carousel-caption'>
           <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
           <p>
@@ -43,7 +47,11 @@ function Hero() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={home3} className='w-100' alt='Gambar Solusi Kesehatan' />
+        <img
+          src='/assets/img/home3.png'
+          className='w-100'
+          alt='Gambar Solusi Kesehatan'
+        />
         <Carousel.Caption className='carousel-caption'>
           <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
           <p>

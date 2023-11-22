@@ -1,5 +1,3 @@
-import gifdokter from '../../assets/img/d1.gif';
-
 function About() {
   return (
     <div>
@@ -8,7 +6,7 @@ function About() {
           <div className='row'>
             <div className='col-lg-6 col-md-12 col-12'>
               <div className='about-img'>
-                <img src={gifdokter} alt='' className='img-fluid' />
+                <img src='/assets/img/d1.gif' alt='' className='img-fluid' />
               </div>
             </div>
             <div className='col-lg-6 col-md-12 col-12 ps-lg-5 mt-md-5'>
