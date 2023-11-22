@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import NavMenus from "./NavMenus";
 import './LayoutDashboard.css'
 import Logout from "../../component/dashboard/Logout";
+import BreadCrumb from "../../component/dashboard/BreadCrumb";
 
 const { Sider, Content, Header } = Layout;
 
@@ -104,6 +105,7 @@ function LayoutDasboard(props) {
                />
             </div>
          </Sider>
+
          <Layout className="site-layout">
             <Header>
                {React.createElement(HiOutlineMenuAlt2, {
@@ -128,7 +130,7 @@ function LayoutDasboard(props) {
                   </Dropdown>
                </div>
             </Header>
-
+            <BreadCrumb />
             <Content className="site-layout-background">{props.content}</Content>
          </Layout>
       </Layout>

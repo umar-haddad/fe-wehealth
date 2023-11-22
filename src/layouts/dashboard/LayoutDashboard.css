@@ -481,3 +481,23 @@ span.ant-menu-title-content {
 .link-logout {
   text-decoration: none;
 }
+
+.ant-breadcrumb {
+  margin-left: 22px !important;
+  font-size: 1.2em;
+}
+
+.ant-breadcrumb li a {
+  text-decoration: none;
+}
+
+.ant-breadcrumb li:last-child a {
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+.ant-breadcrumb li:last-child a:hover {
+  color: black !important;
+}
+
+.title-case {
+  text-transform: capitalize !important;
+}
