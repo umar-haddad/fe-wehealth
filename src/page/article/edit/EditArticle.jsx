@@ -78,8 +78,8 @@ const EditArticle = ({ id, onUpdate, onCancel, show }) => {
         return;
       }
 
-      const { data } = await axios.post(
-        VITE_BASE_URL + `/api/v1/articles`,
+      const { data } = await axios.patch(
+        VITE_BASE_URL + `/api/v1/articles/${id}`,
         {
           ...newData,
         },
