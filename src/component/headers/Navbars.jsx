@@ -11,7 +11,7 @@ function Navbars() {
         <Navbar.Collapse id='basic-navbar-nav'>
           <ul className='ms-auto text-center navbar-nav'>
             <li className='nav-item'>
-              <Link className='nav-link active' to='./'>
+              <Link className='nav-link active' to='/'>
                 Home
               </Link>
             </li>
