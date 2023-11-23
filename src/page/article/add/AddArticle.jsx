@@ -102,6 +102,13 @@ const AddArticle = ({ show, onCreate, onCancel }) => {
                   <Input />
                </Form.Item>
                <Form.Item
+                  name="description"
+                  label="Deskripsi"
+                  rules={[{ required: true, message: "Harap diisi" }]}
+               >
+                  <Input />
+               </Form.Item>
+               <Form.Item
                   name="content"
                   label="Isi"
                   rules={[{ required: true, message: "Harap diisi" }]}
