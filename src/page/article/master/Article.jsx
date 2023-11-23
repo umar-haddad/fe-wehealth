@@ -57,7 +57,6 @@ const Article = () => {
       },
       { title: "Judul", dataIndex: "title", align: "left" },
       { title: "Deskripsi", dataIndex: "description", align: "left" },
-      { title: "Isi", dataIndex: "content", align: "left" },
       { title: "Kategori", dataIndex: "category", align: "left" },
       {
          title: "Aksi",
@@ -144,7 +143,7 @@ const Article = () => {
    };
 
    return (
-      <div>
+      <>
          <div className="table-header">
             <h1>Daftar Article</h1>
             <Space>
@@ -187,7 +186,7 @@ const Article = () => {
             onCancel={onCancel}
             show={showEditArticle}
          />
-      </div >
+      </ >
    );
 };
 
