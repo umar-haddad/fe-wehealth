@@ -62,6 +62,7 @@ const Article = () => {
          title: "Aksi",
          dataIndex: "_id",
          align: "center",
+         width: window.innerWidth > 800 ? 200 : 150,
          render: (id) => {
             return (
                <>
