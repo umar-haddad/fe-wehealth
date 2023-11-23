@@ -9,6 +9,8 @@ export const getArticle = async (url) => {
     return data;
   } catch (error) {
     message.error(`Gagal mengambil data ( ${error.message} )`, 3);
+    // harus return error juga
+    return error;
   }
 };
 
@@ -18,6 +20,7 @@ export const deleteArticle = async (url) => {
     return data;
   } catch (error) {
     message.error(`Gagal menghapus data ( ${error.message} )`, 3);
+    return error;
   }
 };
 
@@ -27,5 +30,6 @@ export const getDetailArticle = async (url) => {
     return data;
   } catch (error) {
     message.error(`Gagal mengambil data ( ${error.message} )`, 3);
+    return error;
   }
 };

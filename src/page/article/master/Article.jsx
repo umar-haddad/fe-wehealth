@@ -62,6 +62,7 @@ const Article = () => {
          title: "Aksi",
          dataIndex: "_id",
          align: "center",
+         width: window.innerWidth > 800 ? 200 : 150,
          render: (id) => {
             return (
                <>
@@ -143,7 +144,7 @@ const Article = () => {
    };
 
    return (
-      <div>
+      <>
          <div className="table-header">
             <h1>Daftar Article</h1>
             <Space>
@@ -186,7 +187,7 @@ const Article = () => {
             onCancel={onCancel}
             show={showEditArticle}
          />
-      </div >
+      </ >
    );
 };
 
