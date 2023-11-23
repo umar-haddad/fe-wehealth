@@ -54,7 +54,7 @@ function LayoutDasboard(props) {
             // handleLogout();
             console.log("logout");
             return;
-         } else if (param.key === "home") navigate("/home");
+         } else if (param.key === "home") navigate("/");
          else if (param.key === "mnuDashboard") navigate("/dashboard");
          else navigate("/dashboard/" + param.key.toLowerCase().split("mnu")[1]);
       }

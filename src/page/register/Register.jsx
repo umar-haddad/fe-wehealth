@@ -3,12 +3,15 @@ import log from "../../assets/image/login.png";
 // import goggleImg from "../../assets/image/google.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { message } from "antd";
+
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [confirm, setConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const URL = import.meta.env.VITE_BASE_URL;
   const navigate = useNavigate();
@@ -25,12 +28,11 @@ const Register = () => {
         password,
       };
       const response = await axios.post(`${URL}/api/v1/auth/register`, data);
-      console.log(response.data);
-
-      console.log("Signup berhasil");
+      message.success(response.data.message);
       navigate("/login");
     } catch (error) {
-      console.log(error);
+      let msg = error?.response?.data?.message || "Register Failed";
+      message.error(msg);
     } finally {
       setLoading(false);
     }
@@ -112,6 +114,8 @@ const Register = () => {
                     type="checkbox"
                     id="gridCheck"
                     required
+                    onChange={(e) => setConfirm(e.target.checked)}
+                    value={confirm}
                   />
                   <label className="form-check-label" htmlFor="gridCheck">
                     I agree with <a href="">Terms & Conditions</a>
@@ -120,7 +124,9 @@ const Register = () => {
               </div>
               <div className="button container-fluid">
                 <div className="row">
-                  <button type="submit" className="btn btn-primary col-lg-12">
+                  <button type="submit" className="btn btn-primary col-lg-12" disabled={
+                    loading || !confirm
+                  }>
                     Register
                   </button>
                 </div>
