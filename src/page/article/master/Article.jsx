@@ -7,6 +7,7 @@ import './Article.css'
 import { DeleteApi } from "../../../services/DeleteApi";
 import AddArticle from "../add/AddArticle";
 import EditArticle from "../edit/EditArticle";
+import { useNavigate } from "react-router-dom";
 
 const Article = () => {
    const [dataId, setDataId] = useState("");
@@ -18,6 +19,8 @@ const Article = () => {
       per_page: 15,
       total: 0,
    });
+
+   const navigate = useNavigate();
 
    const { data, isLoading, isFetching, refetch } = useArticlePagination(
       dataTable,
@@ -62,6 +65,17 @@ const Article = () => {
          render: (id) => {
             return (
                <>
+                  <Tag
+                     color="blue"
+                     style={
+                        { cursor: "pointer" }
+                     }
+                     onClick={() => {
+                        navigate(`/dashboard/article/${id}`);
+                     }}
+                  >
+                     Detail
+                  </Tag>
                   <Tag
                      color="orange"
                      style={
