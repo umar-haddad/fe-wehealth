@@ -5,6 +5,7 @@ import log from "../../assets/image/login.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { message } from "antd";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,9 +23,11 @@ function Login() {
       };
       const response = await axios.post(`${URL}/api/v1/auth/login`, data);
       Cookies.set("token", response.data?.data?.access_token, { expires: 1 });
+      message.success(response.data?.message);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      let msg = error?.response?.data?.message || "Login Failed";
+      message.error(msg);
     }
     setLoading(false);
   };
@@ -77,20 +80,7 @@ function Login() {
                 </div>
                 <div className="container" id="email_wrapper">
                   <div className="row">
-                    <div className="button_remember col-lg-6 text-start">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="gridCheck"
-                          required
-                        />
-                        <label className="form-check-label" htmlFor="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-12 mb-3">
                       <div
                         className="d-flex justify-content-end"
                         id="forgotPasswordLink"
