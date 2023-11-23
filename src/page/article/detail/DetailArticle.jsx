@@ -36,6 +36,10 @@ function DetailArticle() {
                         <td>: {data?.category}</td>
                      </tr>
                      <tr>
+                        <th>Deskripsi</th>
+                        <td>: {data?.description}</td>
+                     </tr>
+                     <tr>
                         <th>Isi</th>
                         <td>: {data?.content}</td>
                      </tr>

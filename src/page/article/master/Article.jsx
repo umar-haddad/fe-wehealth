@@ -56,6 +56,7 @@ const Article = () => {
          width: window.innerWidth > 800 ? 70 : 50,
       },
       { title: "Judul", dataIndex: "title", align: "left" },
+      { title: "Deskripsi", dataIndex: "description", align: "left" },
       { title: "Isi", dataIndex: "content", align: "left" },
       { title: "Kategori", dataIndex: "category", align: "left" },
       {
