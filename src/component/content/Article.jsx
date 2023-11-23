@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Article() {
-  const apiUrl =
-    'https://6524d54eea560a22a4ea26a4.mockapi.io/api/v1/artike?page=1&limit=3';
+  const URL = import.meta.env.VITE_BASE_URL;
 
   const [articles, setArticles] = useState([]);
 
   async function fetchArticles() {
     try {
-      const response = await axios.get(apiUrl);
-      setArticles(response.data);
+      const response = await axios.get(`${URL}/api/v1/articles?page=1&limit=3`);
+      console.log(response);
+      setArticles(response.data.data);
     } catch (error) {
       console.error('Error fetching articles:', error.message);
     } finally {
@@ -24,17 +24,17 @@ function Article() {
 
   function createCard(article) {
     return (
-      <div key={article.id} className='col-12 col-md-12 col-lg-4'>
+      <div key={article._id} className='col-12 col-md-12 col-lg-4'>
         <div className='card text-center bg-white pb-2'>
           <img
-            src={article.gambar}
+            src={article.image}
             className='card-img-top'
-            alt={article.judul}
+            alt={article.title}
             style={{ height: '200px', objectFit: 'cover' }}
           />
           <div className='card-body'>
-            <h5 className='card-title'>{article.judul}</h5>
-            <p className='card-text'>{article.deskripsi}</p>
+            <h5 className='card-title'>{article.title}</h5>
+            <p className='card-text'>{article.content}</p>
             <a href='#' className='btn btn-primary mt-auto'>
               Baca Selengkapnya
             </a>

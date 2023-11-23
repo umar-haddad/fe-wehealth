@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 function Navbars() {
   return (
@@ -10,40 +11,40 @@ function Navbars() {
         <Navbar.Collapse id='basic-navbar-nav'>
           <ul className='ms-auto text-center navbar-nav'>
             <li className='nav-item'>
-              <a className='nav-link active' href='./'>
+              <Link className='nav-link active' to='./'>
                 Home
-              </a>
+              </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='/konsultasi'>
+              <Link className='nav-link' to='/konsultasi'>
                 Konsultasi
-              </a>
+              </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='/artikel'>
+              <Link className='nav-link' to='/article'>
                 Artikel
-              </a>
+              </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='/klinik-center'>
+              <Link className='nav-link' to='/klinik-center'>
                 Klinik Center
-              </a>
+              </Link>
             </li>
           </ul>
 
           <ul className='navbar-nav ms-auto mb-2 mb-lg-0 navbar-user'>
             <li className='nav-item nav-link-button'>
-              <a
-                href='/login'
+              <Link
+                to='/login'
                 className='btn btn-outline-primary rounded-3 me-2'
               >
                 Login
-              </a>
+              </Link>
             </li>
             <li className='nav-item nav-link-button-2'>
-              <a href='/register' className='btn btn-primary rounded-3'>
+              <Link to='/register' className='btn btn-primary rounded-3'>
                 Sign Up
-              </a>
+              </Link>
             </li>
           </ul>
         </Navbar.Collapse>
