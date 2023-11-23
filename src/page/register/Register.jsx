@@ -11,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [confirm, setConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const URL = import.meta.env.VITE_BASE_URL;
   const navigate = useNavigate();
@@ -113,6 +114,8 @@ const Register = () => {
                     type="checkbox"
                     id="gridCheck"
                     required
+                    onChange={(e) => setConfirm(e.target.checked)}
+                    value={confirm}
                   />
                   <label className="form-check-label" htmlFor="gridCheck">
                     I agree with <a href="">Terms & Conditions</a>
@@ -121,7 +124,9 @@ const Register = () => {
               </div>
               <div className="button container-fluid">
                 <div className="row">
-                  <button type="submit" className="btn btn-primary col-lg-12">
+                  <button type="submit" className="btn btn-primary col-lg-12" disabled={
+                    loading || !confirm
+                  }>
                     Register
                   </button>
                 </div>
