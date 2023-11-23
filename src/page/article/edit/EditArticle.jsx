@@ -53,6 +53,7 @@ const EditArticle = ({ id, onUpdate, onCancel, show }) => {
         title: data?.data?.article?.title,
         content: data?.data?.article?.content,
         category: data?.data?.article?.category,
+        description: data?.data?.article?.description,
       });
       if (data?.data?.article?.image) {
         setFileList([
@@ -130,6 +131,13 @@ const EditArticle = ({ id, onUpdate, onCancel, show }) => {
                 rules={[{ required: true, message: 'Harap diisi' }]}
               >
                 <Input onChange={({ target: { value } }) => (newData["title"] = value)} />
+              </Form.Item>
+              <Form.Item
+                name='description'
+                label='Deskripsi'
+                rules={[{ required: true, message: 'Harap diisi' }]}
+              >
+                <Input onChange={({ target: { value } }) => (newData["description"] = value)} />
               </Form.Item>
               <Form.Item
                 name='content'
