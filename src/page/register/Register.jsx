@@ -3,6 +3,8 @@ import log from "../../assets/image/login.png";
 // import goggleImg from "../../assets/image/google.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { message } from "antd";
+
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -25,12 +27,11 @@ const Register = () => {
         password,
       };
       const response = await axios.post(`${URL}/api/v1/auth/register`, data);
-      console.log(response.data);
-
-      console.log("Signup berhasil");
+      message.success(response.data.message);
       navigate("/login");
     } catch (error) {
-      console.log(error);
+      let msg = error?.response?.data?.message || "Register Failed";
+      message.error(msg);
     } finally {
       setLoading(false);
     }
