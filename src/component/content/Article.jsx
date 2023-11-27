@@ -25,7 +25,11 @@ function Article() {
   function createCard(article) {
     return (
       <div key={article._id} className='col-12 col-md-12 col-lg-4'>
-        <div className='card text-center bg-white pb-2'>
+        <div
+          className='card text-center bg-white pb-2 shadow rounded'
+          data-aos='zoom-in'
+          data-aos-duration='1000'
+        >
           <img
             src={article.image}
             className='card-img-top'
@@ -46,11 +50,7 @@ function Article() {
 
   return (
     <div>
-      <section
-        id='article'
-        className='article section-padding'
-        data-aos='zoom-in'
-      >
+      <section id='article' className='article section-padding'>
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>

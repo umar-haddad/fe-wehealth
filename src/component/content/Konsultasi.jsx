@@ -23,7 +23,11 @@ function Konsultasi() {
   function createCard(doctor) {
     return (
       <div key={doctor.id} className='col-12 col-md-12 col-lg-3'>
-        <div className='card text-center bg-white pb-2'>
+        <div
+          className='card text-center bg-white pb-2 shadow rounded'
+          data-aos='zoom-in'
+          data-aos-duration='1000'
+        >
           <img
             src={doctor.gambar}
             className='card-img-top'
