@@ -10,6 +10,7 @@ import ArticleDetail from "./component/article/ArticleDetail";
 import LayoutHome from "./layouts/home/LayoutHome";
 import AboutUs from "./page/About/AboutUs";
 import Profile from "./page/Profile/Profile";
+import DetailLayanan from "./page/detailLayanan/DetailLayanan";
 
 const Router = () => {
   return (
@@ -39,6 +40,10 @@ const Router = () => {
       />
       <Route path="/about" element={<LayoutHome content={<AboutUs />} />} />
       <Route path="/profile" element={<Profile />} />
+      <Route
+        path="/detaillayanan"
+        element={<LayoutHome content={<DetailLayanan />} />}
+      />
     </Routes>
   );
 };
