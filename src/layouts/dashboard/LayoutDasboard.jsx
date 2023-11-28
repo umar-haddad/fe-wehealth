@@ -45,7 +45,7 @@ function LayoutDasboard(props) {
     { key: 'home', icon: <AppstoreFilled />, label: 'Home' },
     { key: 'mnuDashboard', icon: <DashboardOutlined />, label: 'Dashboard' },
     { key: 'mnuArticle', icon: <FileOutlined />, label: 'Article' },
-    { key: 'mnuDoctor', icon: <UserOutlined />, label: 'Doctor' },
+    { key: 'mnuDokter', icon: <UserOutlined />, label: 'Dokter' },
     {
       key: 'mnuLayananFaskes',
       icon: <MedicineBoxOutlined />,
