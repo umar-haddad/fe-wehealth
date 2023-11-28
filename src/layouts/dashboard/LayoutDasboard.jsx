@@ -18,6 +18,7 @@ import NavMenus from './NavMenus';
 import './LayoutDashboard.css';
 import Logout from '../../component/dashboard/Logout';
 import BreadCrumb from '../../component/dashboard/BreadCrumb';
+import './LayoutDashboard.css';
 
 const { Sider, Content, Header } = Layout;
 
@@ -44,7 +45,7 @@ function LayoutDasboard(props) {
     { key: 'home', icon: <AppstoreFilled />, label: 'Home' },
     { key: 'mnuDashboard', icon: <DashboardOutlined />, label: 'Dashboard' },
     { key: 'mnuArticle', icon: <FileOutlined />, label: 'Article' },
-    { key: 'mnuDokter', icon: <UserOutlined />, label: 'Dokter' },
+    { key: 'mnuDoctor', icon: <UserOutlined />, label: 'Doctor' },
     {
       key: 'mnuLayananFaskes',
       icon: <MedicineBoxOutlined />,
