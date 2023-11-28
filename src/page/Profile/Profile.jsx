@@ -1,5 +1,5 @@
 import "./Profile.css";
-import ImageProfil from "../../../public/assets/img/logo.png";
+import ImageProfil from "../../../public/assets/img/home2.png";
 
 function Profile() {
   return (
@@ -13,19 +13,15 @@ function Profile() {
           </div>
           <div className="div-5 col-12 d-flex mt-5 px-5 flex-column">
             <div className="div-6 py-5">Profil Saya</div>
-            <div className="div-7 col-12 d-flex align-items-center justify-content-between gap-3 my-3">
-              <div className="div-8 col-6 d-flex justify-content-between gap-3 position-relative">
-                <div className="div-9 col-12 d-flex flex-column align-items-end overflow-hidden position-relative aspect-ratio-1">
+            <div className="div-7 col-12 d-flex align-items-center justify-content-between my-3">
+              <div className="div-8 col-6 d-flex justify-content-between position-relative">
+                <div className="div-9 col-12 d-flex align-items-end position-relative ">
                   <img
                     loading="lazy"
                     src={ImageProfil}
-                    className="img-2 position-relative h-50 w-50 object-fit-cover img-fluid rounded-circle"
+                    className="img-2 position-relative h-50 w-50 align-self-start "
                   />
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/86a68215-34cd-436b-8cd8-ee35d195dc6d?"
-                    className="img-3 position-absolute bottom-0 end-5 z-index-1"
-                  />
+                  <i className="fa-solid fa-camera"></i>
                 </div>
                 <div className="div-10 col-6 d-flex flex-column align-items-start justify-content-center">
                   <span className="mb-2">Angel Lala</span>
@@ -40,41 +36,29 @@ function Profile() {
               <div className="div-14 position-relative text-start">
                 Informasi pribadi
               </div>
-              <div className="div-13 col-6 d-flex flex-column ">
-                <div className="div-15 mb-2">Email address</div>
+              <div className="div-13 col-3 d-flex flex-column">
+                <div className="col-12  mb-2">Email</div>
                 <div className="d-flex flex-row justify-content-between align-items-center mb-3">
                   <div className="div-17 text-center me-2">test@gmail.com</div>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/6945a3e1-4920-4e59-9600-1c5826f63fdd?"
-                    className="img-4"
-                  />
+                  <i className="fa-regular fa-pen-to-square"></i>
                 </div>
 
                 <div className="div-18 mb-2">Address</div>
                 <div className="d-flex flex-row justify-content-between align-items-center mb-3">
                   <div className="div-20 me-2">Jalan Test, Jakarta Timur</div>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3d3dfa5-5934-4299-9531-c65d365c7cfe?"
-                    className="img-5"
-                  />
+                  <i className="fa-regular fa-pen-to-square"></i>
                 </div>
 
                 <div className="div-24 mb-2">Phone</div>
                 <div className="d-flex flex-row justify-content-between align-items-center">
                   <div className="div-24 me-2">+628421421300</div>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d88b912e-712b-4451-8fc6-c87cde0bf601?"
-                    className="img-6"
-                  />
+                  <i className="fa-regular fa-pen-to-square"></i>
                 </div>
               </div>
             </div>
           </div>
           <div className="div-25"></div>
-          <div className="div-26 col-12  d-flex gap-5 text-center">
+          <div className="div-26 col-12 pt-5 pb-5  d-flex gap-5 text-center">
             <div className="div-27 col-2">
               <div className="div-28 col-3">Umur</div>
               <span className="border1 border-3 "></span>
@@ -93,7 +77,7 @@ function Profile() {
             </div>
           </div>
           <div className="div-35"></div>
-          <div className="row div-36">
+          <div className="row div-36 pt-5 pb-5">
             <div className=" div-37 col-12">
               <div className="mb-3">
                 <div className="border-bottom">Jenis Kelamin</div>

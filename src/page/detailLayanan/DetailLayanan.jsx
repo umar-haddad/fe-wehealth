@@ -9,7 +9,7 @@ function DetailLayanan() {
           <div className="col-md-12 ">
             <div className=" d-flex">
               <div className="col-md-6">
-                <div className="div-3 d-flex flex-column align-items-center">
+                <div className="div-3 d-flex flex-column align-items-start mt-5">
                   <button className="btn btn-outline-secondary back-button">
                     <i className="fas fa-arrow-left"></i> Kembali
                   </button>
