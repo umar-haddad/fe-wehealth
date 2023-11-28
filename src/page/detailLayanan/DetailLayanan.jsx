@@ -10,10 +10,9 @@ function DetailLayanan() {
             <div className=" d-flex">
               <div className="col-md-6">
                 <div className="div-3 d-flex flex-column align-items-center">
-                  <div className="div-4 p-5 d-flex flex-column align-items-start justify-content-between">
-                    <i className="bi bi-chevron-compact-left"> </i>
-                    <div className="div-5 align-self-center">Kembali</div>
-                  </div>
+                  <button className="btn btn-outline-secondary back-button">
+                    <i className="fas fa-arrow-left"></i> Kembali
+                  </button>
                   <img src={imgLayanan} className="img-2" />
                 </div>
               </div>
@@ -25,7 +24,7 @@ function DetailLayanan() {
                   <div className="div-8 text-black text-opacity-80 text-sm leading-6 whitespace-nowrap mt-6 max-md:max-w-full">
                     Spesialis Mata
                   </div>
-                  <div className="border-bottom mt-8 pr-20 pt-5 pb-2 border-top-0 border-solid border- max-md:max-w-full max-md:pr-5">
+                  <div className="border-bottom mt-8  pt-5 pb-2  ">
                     <div className="div-9 ">
                       <div className="col-md-12">
                         <div className="d-flex ">
