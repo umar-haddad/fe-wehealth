@@ -1,7 +1,7 @@
 import About from '../../component/content/About';
 import Hero from '../../component/content/Hero';
 import Article from '../../component/content/Article';
-import Konsultasi from '../../component/content/Konsultasi';
+import Dokter from '../../component/content/Dokter';
 
 import '../../assets/css/style.css';
 
@@ -11,7 +11,7 @@ function Homepages() {
       <Hero />
       <About />
       <Article />
-      <Konsultasi />
+      <Dokter />
     </>
   );
 }
