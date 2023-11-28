@@ -7,8 +7,9 @@ function Profile() {
       <div className="div container py-3 px-3">
         <div className="div-2 row col-12 mx-auto">
           <div className="div-3 d-flex w-25 mx-lg-1">
-            <i className="fa-solid fa-chevron-left"></i>
-            <div className="div-4">Back</div>
+            <button className="btn btn-outline-secondary back-button">
+              <i className="fas fa-arrow-left"></i> Kembali
+            </button>
           </div>
           <div className="div-5 col-12 d-flex mt-5 px-5 flex-column">
             <div className="div-6 py-5">Profil Saya</div>
@@ -18,12 +19,12 @@ function Profile() {
                   <img
                     loading="lazy"
                     src={ImageProfil}
-                    className="img-2 position-relative h-100 w-100 object-fit-cover img-fluid rounded-circle"
+                    className="img-2 position-relative h-50 w-50 object-fit-cover img-fluid rounded-circle"
                   />
                   <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/86a68215-34cd-436b-8cd8-ee35d195dc6d?"
-                    className="img-3 position-absolute bottom-0 end-0 z-index-1"
+                    className="img-3 position-absolute bottom-0 end-5 z-index-1"
                   />
                 </div>
                 <div className="div-10 col-6 d-flex flex-column align-items-start justify-content-center">
@@ -39,8 +40,8 @@ function Profile() {
               <div className="div-14 position-relative text-start">
                 Informasi pribadi
               </div>
-              <div className="div-13 col-12 d-flex flex-column flex-grow-1 flex-basis-0">
-                <div className="div-15 col-12  mb-2">Email address</div>
+              <div className="div-13 col-6 d-flex flex-column ">
+                <div className="div-15 mb-2">Email address</div>
                 <div className="d-flex flex-row justify-content-between align-items-center mb-3">
                   <div className="div-17 text-center me-2">test@gmail.com</div>
                   <img
