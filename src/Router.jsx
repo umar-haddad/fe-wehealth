@@ -8,6 +8,7 @@ import DetailArticle from "./page/article/detail/DetailArticle";
 import ArticleHomes from "./page/home/ArticleHomes";
 import ArticleDetail from "./component/article/ArticleDetail";
 import LayoutHome from "./layouts/home/LayoutHome";
+import User from "./page/user/master/User";
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
       <Route path="/dashboard/article/:article_id" element={<LayoutDasboard content={<DetailArticle />} />} />
       <Route path="/article" element={<LayoutHome content={<ArticleHomes />} />} />
       <Route path="/article/:article_id" element={<LayoutHome content={<ArticleDetail />} />} />
+      <Route path="/dashboard/user" element={<LayoutDasboard content={<User />} />} />
     </Routes>
   );
 };

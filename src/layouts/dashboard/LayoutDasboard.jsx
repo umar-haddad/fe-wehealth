@@ -4,12 +4,13 @@ import { Dropdown, Layout, Drawer } from "antd";
 // import { default as LOGO, default as LogoFG } from "assets/img/logoFG.png";
 
 import React, { useState } from "react";
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { HiOutlineMenuAlt2, HiUser } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import NavMenus from "./NavMenus";
 import './LayoutDashboard.css'
 import Logout from "../../component/dashboard/Logout";
 import BreadCrumb from "../../component/dashboard/BreadCrumb";
+import Cookies from "js-cookie";
 
 const { Sider, Content, Header } = Layout;
 
@@ -20,13 +21,19 @@ function LayoutDasboard(props) {
    const [open, setOpen] = useState(false);
 
    const navigate = useNavigate();
-   const email = "rajasaputeraxii.ipa5"
+   const email = Cookies.get("email");
 
 
    const handleClickItemUser = (e) => {
       if (e.key === "profile") navigate("/profile");
       // else handleLogout();
    };
+
+   const handleLogout = () => {
+      Cookies.remove("token");
+      Cookies.remove("email");
+      navigate("/");
+   }
 
    const itemsUser = [
       { key: "profile", label: <span>Profile</span> },
@@ -39,6 +46,7 @@ function LayoutDasboard(props) {
       { key: "mnuArticle", icon: <FileOutlined />, label: "Article" },
       { key: "mnuDoctor", icon: <UserOutlined />, label: "Doctor" },
       { key: "mnuLayananFaskes", icon: <MedicineBoxOutlined />, label: "Layanan Faskes" },
+      { key: "mnuUser", icon: <HiUser />, label: "User" },
 
    ];
 
@@ -51,8 +59,7 @@ function LayoutDasboard(props) {
          return;
       } else {
          if (param.key === "logout") {
-            // handleLogout();
-            console.log("logout");
+            handleLogout();
             return;
          } else if (param.key === "home") navigate("/");
          else if (param.key === "mnuDashboard") navigate("/dashboard");

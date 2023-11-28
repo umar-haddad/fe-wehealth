@@ -23,6 +23,7 @@ function Login() {
       };
       const response = await axios.post(`${URL}/api/v1/auth/login`, data);
       Cookies.set("token", response.data?.data?.access_token, { expires: 1 });
+      Cookies.set("email", email, { expires: 1 });
       message.success(response.data?.message);
       navigate("/");
     } catch (error) {
