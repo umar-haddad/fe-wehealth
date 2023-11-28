@@ -35,9 +35,10 @@ function Hero() {
           alt='Gambar Solusi Kesehatan'
         />
         <Carousel.Caption className='carousel-caption'>
-          <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
+          <h3>Konsultasi Medis Langsung dari Rumah Anda</h3>
           <p>
-            Kesehatan yang Terpadu di Satu Tempat. Kami Ada untuk Menjaga Anda
+            Konsultasi Medis Tanpa Batas. Perawatan yang Aman, Nyaman, dan
+            Terjangkau di Genggaman Anda
           </p>
           <p>
             <a href='#' className='btn btn-warning mt-3'>
@@ -53,9 +54,10 @@ function Hero() {
           alt='Gambar Solusi Kesehatan'
         />
         <Carousel.Caption className='carousel-caption'>
-          <h3>Solusi Kesehatan yang Menyeluruh dan Terpercaya</h3>
+          <h3>Berbagai Artikel Kesehatan untuk Pemahaman Lebih Mendalam</h3>
           <p>
-            Kesehatan yang Terpadu di Satu Tempat. Kami Ada untuk Menjaga Anda
+            Temukan Pengetahuan Kesehatan Terbaru. Menyediakan Informasi yang
+            Anda Butuhkan untuk Hidup Sehat
           </p>
           <p>
             <a href='#' className='btn btn-warning mt-3'>
