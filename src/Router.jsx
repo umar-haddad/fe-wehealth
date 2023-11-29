@@ -12,6 +12,7 @@ import AboutUs from "./page/About/AboutUs";
 import Profile from "./page/Profile/Profile";
 import DetailLayanan from "./page/detailLayanan/DetailLayanan";
 import User from "./page/user/master/User";
+import ListLayanan from "./page/listLayanan/ListLayanan";
 
 const Router = () => {
   return (
@@ -45,15 +46,37 @@ const Router = () => {
         path="/detaillayanan"
         element={<LayoutHome content={<DetailLayanan />} />}
       />
-      <Route path='/' element={<LayoutHome content={<Homepages />} />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/login' element={<Login />} />
-      <Route path="/dashboard" element={<LayoutDasboard content={<h1>Hello world</h1>} />} />
-      <Route path="/dashboard/article" element={<LayoutDasboard content={<Article />} />} />
-      <Route path="/dashboard/article/:article_id" element={<LayoutDasboard content={<DetailArticle />} />} />
-      <Route path="/article" element={<LayoutHome content={<ArticleHomes />} />} />
-      <Route path="/article/:article_id" element={<LayoutHome content={<ArticleDetail />} />} />
-      <Route path="/dashboard/user" element={<LayoutDasboard content={<User />} />} />
+      <Route path="/" element={<LayoutHome content={<Homepages />} />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/dashboard"
+        element={<LayoutDasboard content={<h1>Hello world</h1>} />}
+      />
+      <Route
+        path="/dashboard/article"
+        element={<LayoutDasboard content={<Article />} />}
+      />
+      <Route
+        path="/dashboard/article/:article_id"
+        element={<LayoutDasboard content={<DetailArticle />} />}
+      />
+      <Route
+        path="/article"
+        element={<LayoutHome content={<ArticleHomes />} />}
+      />
+      <Route
+        path="/article/:article_id"
+        element={<LayoutHome content={<ArticleDetail />} />}
+      />
+      <Route
+        path="/dashboard/user"
+        element={<LayoutDasboard content={<User />} />}
+      />
+      <Route
+        path="/listlayanan"
+        element={<LayoutHome content={<ListLayanan />} />}
+      />
     </Routes>
   );
 };
