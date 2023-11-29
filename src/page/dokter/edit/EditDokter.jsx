@@ -2,7 +2,6 @@ import { Form, Input, message, Modal, Skeleton, Upload } from 'antd';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
-const { TextArea } = Input;
 import propTypes from 'prop-types';
 import { useDokterDetail } from '../../../hooks/useDokterDetail';
 import { PlusOutlined } from '@ant-design/icons';
