@@ -1,0 +1,40 @@
+:root {
+  --primary-color: #f6f8fd;
+  --secondary-color: #3869db;
+  --color-text: #231942;
+  --navbar-color: #ffffff;
+  --navbar-color-text: #4f4f4f;
+}
+
+/* STYLE NAVBAR */
+.navbar {
+  position: fixed;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.nav-link a {
+  padding: 5px 10px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--navbar-color-text);
+}
+
+.nav-link a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-link ul li .active {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  color: var(--primary-color);
+}
+
+.nav-link ul li .active:hover {
+  color: var(--navbar-color);
+}
+/* STYLE NAVBAR */
+
+/* STYLE HOMEPAGE */
+
+/* STYLE HOMEPAGE */

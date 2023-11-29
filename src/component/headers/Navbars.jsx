@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Navbars() {
   const [isLogin, setIsLogin] = useState(false);
@@ -12,32 +12,36 @@ function Navbars() {
       setIsLogin(true);
     }
   }, []);
+
   return (
-    <Navbar expand='lg' className='navbar navbar-expand-lg bg-white fixed-top'>
+    <Navbar
+      expand='lg'
+      className='nav-link navbar navbar-expand-lg bg-white fixed-top'
+    >
       <Container>
         <img src='/assets/img/logo.png' alt='logo WeHealth' />
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <ul className='ms-auto text-center navbar-nav'>
             <li className='nav-item'>
-              <Link className='nav-link active' to='/'>
-                Home
-              </Link>
+              <NavLink to='/' activeClassName='active'>
+                <span className='link-text'>Home</span>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/dokter'>
-                Konsultasi
-              </Link>
+              <NavLink to='/dokter' activeClassName='active'>
+                <span className='link-text'>Konsultasi</span>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/article'>
-                Artikel
-              </Link>
+              <NavLink to='/article' activeClassName='active'>
+                <span className='link-text'>Artikel</span>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/klinik-center'>
-                Klinik Center
-              </Link>
+              <NavLink to='/klinik-center' activeClassName='active'>
+                <span className='link-text'>Faskes</span>
+              </NavLink>
             </li>
           </ul>
 
@@ -45,28 +49,34 @@ function Navbars() {
             {isLogin ? (
               <>
                 <li className='nav-item nav-link-button'>
-                  <Link
+                  <NavLink
                     to='/dashboard'
                     className='btn btn-outline-primary rounded-3 me-2'
+                    activeClassName='active'
                   >
                     Dashboard
-                  </Link>
+                  </NavLink>
                 </li>
               </>
             ) : (
               <>
                 <li className='nav-item nav-link-button'>
-                  <Link
+                  <NavLink
                     to='/login'
                     className='btn btn-outline-primary rounded-3 me-2'
+                    activeClassName='active'
                   >
                     Login
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className='nav-item nav-link-button-2'>
-                  <Link to='/register' className='btn btn-primary rounded-3'>
+                  <NavLink
+                    to='/register'
+                    className='btn btn-primary rounded-3'
+                    activeClassName='active'
+                  >
                     Sign Up
-                  </Link>
+                  </NavLink>
                 </li>
               </>
             )}
