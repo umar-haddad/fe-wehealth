@@ -86,6 +86,34 @@ const AddDokter = ({ show, onCreate, onCancel }) => {
       <Form form={form} layout='vertical' className='full-form'>
         <div className='first-form'>
           <Form.Item
+            name="email"
+            label="Email"
+            rules={[{ required: true, message: "Harap diisi" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="password"
+            label="Password"
+            rules={[{ required: true, message: "Harap diisi" }]}
+          >
+            <Input.Password />
+          </Form.Item>
+          <Form.Item
+            name="first_name"
+            label="First Name"
+            rules={[{ required: true, message: "Harap diisi" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="last_name"
+            label="Last Name"
+            rules={[{ required: true, message: "Harap diisi" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
             name='name'
             label='Nama'
             rules={[{ required: true, message: 'Harap diisi' }]}
