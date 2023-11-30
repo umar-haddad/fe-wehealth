@@ -5,6 +5,21 @@ function Profile() {
   const [phone, setPhone] = useState("+628421421300");
   const [email, setEmail] = useState("john.doe@example.com");
   const [location, setLocation] = useState("City, Country");
+  const [age, setAge] = useState("20");
+  const [weight, setWeight] = useState("50");
+  const [height, setHeight] = useState("70");
+
+  const handleHeightChange = (e) => {
+    setWeight(e.target.value);
+  };
+
+  const handleWeightChange = (e) => {
+    setHeight(e.target.value);
+  };
+
+  const handleAgeChange = (e) => {
+    setAge(e.target.value);
+  };
 
   const handlePhoneChange = (e) => {
     setPhone(e.target.value);
@@ -98,15 +113,23 @@ function Profile() {
           <div className="div-26 col-12  d-flex gap-5 text-center">
             <div className="div-27 col-2">
               <div className="div-28 col-3">Umur</div>
-              <span className="border1 border-3 "></span>
+              <input type="number" value={age} onChange={handleAgeChange} />
             </div>
             <div className="div-29 col-2">
               <div className="div-30 col-3">Berat Badan</div>
-              <span className="border1 border-3"></span>
+              <input
+                type="number"
+                value={weight}
+                onChange={handleWeightChange}
+              />
             </div>
             <div className="div-31 col-2">
               <div className="div-32 col-3">Tinggi Badan</div>
-              <span className="border1 border-3"></span>
+              <input
+                type="number"
+                value={height}
+                onChange={handleHeightChange}
+              />
             </div>
             <div className="div-33 col-4 ">
               <div className="div-34 col-2">BMI</div>

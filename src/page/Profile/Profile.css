@@ -136,3 +136,8 @@
   align-self: first baseline;
   margin-top: 5px;
 }
+
+input {
+  border: none;
+  outline: none;
+}
