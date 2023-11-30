@@ -63,7 +63,7 @@ function Konsultasi() {
             </div>
           </div>
           <div className='row list-konsultasi'>{doctors.map(createCard)}</div>
-          <div className='text-center mt-5'>
+          <div className='text-center'>
             <button className='btn btn-outline-primary text-center'>
               Lihat Lebih Banyak
             </button>
