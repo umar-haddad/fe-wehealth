@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDokterDetail } from '../../hooks/useDokterDetail';
-import { Skeleton } from 'antd';
+import { Skeleton, Button, Rate } from 'antd';
 
 function DokterDetail() {
   const { dokter_id: id } = useParams();
@@ -22,6 +22,10 @@ function DokterDetail() {
     navigate(-1);
   };
 
+  const movePayment = () => {
+    navigate(`/dokter/${data._id}/payment`);
+  };
+
   return (
     <div className='container-xl margin-top-100'>
       <button
@@ -30,22 +34,39 @@ function DokterDetail() {
       >
         <i className='fas fa-arrow-left'></i> Kembali
       </button>
-      <div className='main-content'>
+      <div className='main-content row'>
         {isLoading && <Skeleton active />}
         {!isLoading && (
           <>
-            <h1>{data?.name}</h1>
-            <p className='fs-6 text-body-secondary'>
-              {data?.category}, {formattedDate}
-            </p>
-            <p>{data?.year}</p>
-            <p>{data?.price}</p>
-            <img
-              src={data?.image}
-              alt={data?.title}
-              className='img-fluid mb-2'
-            />
-            <p>{data?.content}</p>
+            {/* Kolom Kiri (Gambar Dokter) */}
+            <div className='col-md-6'>
+              <img
+                src={data?.image}
+                alt={data?.name}
+                className='img-fluid mb-2'
+              />
+            </div>
+
+            {/* Kolom Kanan (Informasi Dokter) */}
+            <div className='col-md-6'>
+              <h1>{data?.name}</h1>
+              <p className='fs-6 text-body-secondary'>
+                {data?.category}, {formattedDate}
+              </p>
+              <p>{data?.year} Tahun Pengalaman</p>
+
+              {/* Rating/Bintang */}
+              <div className='mb-2'>
+                <Rate disabled defaultValue={data?.rating || 0} />
+              </div>
+
+              <p>{data?.content}</p>
+
+              {/* Button Chat Sekarang */}
+              <Button type='primary' className='mt-3' onClick={movePayment}>
+                Chat Sekarang
+              </Button>
+            </div>
           </>
         )}
       </div>

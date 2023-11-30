@@ -16,6 +16,7 @@ import AboutUs from './page/About/AboutUs';
 import Profile from './page/Profile/Profile';
 import DetailLayanan from './page/detailLayanan/DetailLayanan';
 import User from './page/user/master/User';
+import DokterPayment from './component/dokter/DokterPayment';
 
 const Router = () => {
   return (
@@ -111,6 +112,10 @@ const Router = () => {
       <Route
         path='/dashboard/user'
         element={<LayoutDasboard content={<User />} />}
+      />
+      <Route
+        path='/dokter/:dokter_id/payment'
+        element={<LayoutHome content={<DokterPayment />} />}
       />
     </Routes>
   );
