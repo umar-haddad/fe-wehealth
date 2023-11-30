@@ -6,7 +6,6 @@ import {
   MenuOutlined,
   UserOutlined,
   FileOutlined,
-  MedicineBoxOutlined,
 } from '@ant-design/icons';
 import { Dropdown, Layout, Drawer } from 'antd';
 // import { default as LOGO, default as LogoFG } from "assets/img/logoFG.png";
@@ -46,11 +45,7 @@ function LayoutDasboard(props) {
     { key: 'mnuDashboard', icon: <DashboardOutlined />, label: 'Dashboard' },
     { key: 'mnuArticle', icon: <FileOutlined />, label: 'Article' },
     { key: 'mnuDokter', icon: <UserOutlined />, label: 'Dokter' },
-    {
-      key: 'mnuLayananFaskes',
-      icon: <MedicineBoxOutlined />,
-      label: 'Layanan Faskes',
-    },
+    { key: 'mnuUser', icon: <UserOutlined />, label: 'User' },
   ];
 
   const items2 = [
