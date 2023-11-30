@@ -22,6 +22,10 @@ function ArticleDetail() {
     navigate(-1);
   };
 
+  const transformHTML = (content) => {
+    return content.replaceAll('\r\n', '<br/>');
+  };
+
   return (
     <div className='container-xl margin-top-100'>
       <button
@@ -48,7 +52,10 @@ function ArticleDetail() {
                 width: '100%',
               }}
             />
-            <p>{data?.content}</p>
+            {/* <p>{data?.content}</p> */}
+            <div
+              dangerouslySetInnerHTML={{ __html: transformHTML(data?.content) }}
+            />
           </>
         )}
       </div>
