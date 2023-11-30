@@ -1,5 +1,6 @@
 import "./Profile.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const [phone, setPhone] = useState("+628421421300");
@@ -33,13 +34,23 @@ function Profile() {
     setLocation(e.target.value);
   };
 
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
       <div className="div container py-3 px-3">
         <div className="div-2 row col-12 mx-auto">
           <div className="div-3 d-flex w-25 mx-lg-1">
-            <i className="fa-solid fa-chevron-left"></i>
-            <div className="div-4">Back</div>
+            <button
+              className="btn btn-outline-secondary back-button mb-5"
+              onClick={handleBack}
+            >
+              <i className="fas fa-arrow-left"></i> Kembali
+            </button>
           </div>
           <div className="div-5 col-12 d-flex mt-5 px-5 flex-column">
             <div className="div-6 py-5">Profil Saya</div>
@@ -70,8 +81,8 @@ function Profile() {
               <div className="div-14 position-relative text-start">
                 Informasi pribadi
               </div>
-              <div className="div-13 col-12 d-flex flex-column flex-grow-1 flex-basis-0">
-                <div className="div-15 col-12  mb-2">Email address</div>
+              <div className="div-13 col-6 d-flex flex-column flex-grow-1 flex-basis-0">
+                <div className="col-6  mb-2">Email address</div>
                 <div className="d-flex flex-row justify-content-between align-items-center mb-3">
                   <div className="div-17 text-center me-2">
                     <input
@@ -141,7 +152,10 @@ function Profile() {
             <div className=" div-37 col-12">
               <div className="mb-3">
                 <div className="border-bottom">Jenis Kelamin</div>
-                <span className=" border1 border-3"></span>
+                <select id="selectOptions" name="selectOptions">
+                  <option value="select1">Laki-Laki</option>
+                  <option value="select2">Perempuan</option>
+                </select>
               </div>
             </div>
           </div>
