@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import BMICalculator from "../../component/cekkesehatan/cekCard";
+import HeartRiskCalculator from "../../component/cekkesehatan/cekJantung";
 
 export default function AboutUs() {
   return (
@@ -55,7 +55,7 @@ export default function AboutUs() {
                 </p>
               </div>
             </div>
-            <BMICalculator />
+            <HeartRiskCalculator />
           </div>
         </div>
       </div>
