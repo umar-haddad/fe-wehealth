@@ -1,0 +1,146 @@
+/* :root {
+  --primary-color: #f6f8fd;
+  --secondary-color: #3869db;
+  --color-text: #231942;
+  --navbar-color: #ffffff;
+  --navbar-color-text: #4f4f4f;
+} */
+
+/* STYLE NAVBAR */
+/* .navbar {
+  position: fixed;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.nav-link a {
+  padding: 5px 10px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--navbar-color-text);
+}
+
+.nav-link a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-link ul li .active {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  color: var(--primary-color);
+}
+
+.nav-link ul li .active:hover {
+  color: var(--navbar-color); */
+/* } */
+/* STYLE NAVBAR */
+
+/* STYLE HOMEPAGE */
+
+/* STYLE HOMEPAGE */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #f6f8fd;
+  --secondary-color: #3580dc;
+  --color-text: #231942;
+  --navbar-color: #ffffff;
+  --navbar-color-text: #000000;
+}
+
+/* STYLE NAVBAR */
+.navbar {
+  position: fixed;
+  padding: 15px 0;
+  width: 100%;
+  transition: all 0.2s ease;
+  z-index: 9999;
+}
+
+.navbar.color-active {
+  background-color: var(--navbar-color);
+  padding: 20px 0;
+  border-bottom: 2px solid #dc354638;
+}
+
+.navbar .nav-link a {
+  padding: 5px 10px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--navbar-color-text);
+  border-radius: 5px;
+}
+
+.navbar .nav-link a:hover {
+  color: var(--secondary-color);
+}
+
+.navbar .nav-link .active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.navbar .nav-link .active:hover {
+  color: var(--navbar-color);
+}
+/* STYLE NAVBAR */
+
+/* STYLE HOMEPAGE HEADER*/
+header {
+  background: #c6ffdd; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #7fb9f8,
+    #9db6f9,
+    #edf7f7,
+    #d2f8f8,
+    #bff5ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #7fb9f8,
+    #9db6f9,
+    #edf7f7,
+    #d2f8f8,
+    #bff5ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.homepage .header-box h1 {
+  font-size: 3.2rem;
+  /* harusnya 600, tapi terlalu gede kyk 700 */
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.homepage .header-box h1 span {
+  font-weight: 700;
+}
+
+.homepage .header-box p {
+  line-height: 2;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.homepage .header-box img {
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .homepage .header-box {
+    padding-top: 8rem;
+  }
+
+  .homepage .header-box img {
+    width: 400px;
+    display: block;
+    margin-inline: auto;
+  }
+}
+/* STYLE HOMEPAGE HEADER*/
