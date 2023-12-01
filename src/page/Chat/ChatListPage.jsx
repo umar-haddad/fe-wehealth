@@ -92,7 +92,6 @@ const ChatListPage = () => {
   //   console.log('Document written with ID: ', docRef.id);
   // };
 
-  console.log(isLoading)
 
   useEffect(() => {
     getChatsList();
@@ -103,7 +102,6 @@ const ChatListPage = () => {
   }, []);
 
   const sendMessageToFirestore = async () => {
-    console.log('send message', chat, messages);
     const refDoc = doc(db, 'chats', chat.id);
     await updateDoc(refDoc, {
       messages: [
@@ -184,7 +182,7 @@ const ChatListPage = () => {
                     </div>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-primary mt-1"
                       onClick={sendMessageToFirestore}
                     >
                       Send

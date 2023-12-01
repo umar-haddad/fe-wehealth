@@ -15,7 +15,7 @@ const ChatMessageComponent = ({ userId, message }) => {
           {message.name}
         </div>
         <div className="message-content">{message.message}</div>
-        <div className="timestamp">{message.created_at}</div>
+        <div className="timestamp">{new Date(message.created_at).toLocaleString()}</div>
       </div>
     </div>
   );

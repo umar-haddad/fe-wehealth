@@ -29,7 +29,7 @@ function LayoutDasboard(props) {
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
-  const email = 'rajasaputeraxii.ipa5';
+  const email = Cookies.get('email');
 
   const handleClickItemUser = (e) => {
     if (e.key === 'profile') navigate('/profile');
