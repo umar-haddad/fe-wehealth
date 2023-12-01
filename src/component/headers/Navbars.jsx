@@ -3,10 +3,41 @@ import { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 
 import { navLinks } from '../../data/index';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Dropdown } from "antd";
+
+import {
+  UserOutlined,
+} from '@ant-design/icons';
 
 const Navbars = () => {
   const [changeColor, setChangeColor] = useState(false);
+  const navigate = useNavigate();
+
+  const email = Cookies.get('email');
+
+  const handleLogout = () => {
+    console.log('logout');
+    Cookies.remove('token');
+    Cookies.remove('email');
+    Cookies.remove('role');
+    Cookies.remove('id');
+    navigate('/login');
+  };
+
+  const handleClickItemUser = (e) => {
+    if (e.key === 'profile') navigate('/profile');
+    else if (e.key === 'dashboard') navigate('/dashboard');
+    else if (e.key === 'chat') navigate('/chat');
+    else handleLogout();
+  };
+
+  const itemsUser = [
+    { key: 'profile', label: <span>Profile</span> },
+    Cookies.get('role') === 'admin' && { key: 'dashboard', label: <span>Dashboard</span> },
+    { key: 'chat', label: <span>Konsultasi</span> },
+    { key: 'logout', label: <span>Logout</span> }
+  ];
 
   const changeBackgroundColor = () => {
     if (window.scrollY > 10) {
@@ -60,7 +91,7 @@ const Navbars = () => {
             <ul className='navbar-nav ms-auto mb-2 mb-lg-0 navbar-user text-center'>
               {isLogin ? (
                 <>
-                  <li className='nav-item nav-link-button'>
+                  {/* <li className='nav-item nav-link-button'>
                     <NavLink
                       to='/dashboard'
                       className='btn btn-outline-primary rounded-3 me-2'
@@ -68,7 +99,24 @@ const Navbars = () => {
                     >
                       Dashboard
                     </NavLink>
-                  </li>
+                  </li> */}
+                  <div className='header-container'>
+                    <Dropdown
+                      menu={{
+                        items: itemsUser,
+                        style: { width: '50%' },
+                        onClick: handleClickItemUser,
+                      }}
+                      placement='bottomLeft'
+                      arrow
+                      trigger={['click']}
+                    >
+                      <div className='user-profile'>
+                        <UserOutlined />
+                        <span>{email}</span>
+                      </div>
+                    </Dropdown>
+                  </div>
                 </>
               ) : (
                 <>
