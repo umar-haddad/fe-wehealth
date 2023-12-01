@@ -17,6 +17,7 @@ import Profile from './page/Profile/Profile';
 import DetailLayanan from './page/detailLayanan/DetailLayanan';
 import User from './page/user/master/User';
 import DokterPayment from './component/dokter/DokterPayment';
+import DashboardHome from './page/dashboardHome/dashboardHome';
 
 const Router = () => {
   return (
@@ -26,7 +27,7 @@ const Router = () => {
       <Route path='/login' element={<Login />} />
       <Route
         path='/dashboard'
-        element={<LayoutDasboard content={<h1>Hello world</h1>} />}
+        element={<LayoutDasboard content={<DashboardHome />} />}
       />
       <Route
         path='/dashboard/article'
@@ -55,7 +56,7 @@ const Router = () => {
       <Route path='/login' element={<Login />} />
       <Route
         path='/dashboard'
-        element={<LayoutDasboard content={<h1>Hello world</h1>} />}
+        element={<LayoutDasboard content={<DashboardHome />} />}
       />
       <Route
         path='/dashboard/article'
