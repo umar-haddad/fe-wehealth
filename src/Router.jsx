@@ -20,6 +20,10 @@ import DokterPayment from './component/dokter/DokterPayment';
 import ChatListPage from "./page/Chat/ChatListPage";
 import DashboardHome from './page/dashboardHome/dashboardHome';
 import DokterKonfirmasi from './component/dokter/DokterKonfirmasi';
+import BMICalculator from "./component/cekkesehatan/cekBmi";
+import Master from "./component/cekkesehatan/Master";
+import DiabetesChecker from "./component/cekkesehatan/cekDiabetes";
+import HeartRiskCalculator from "./component/cekkesehatan/cekJantung";
 
 const Router = () => {
   return (
@@ -84,6 +88,18 @@ const Router = () => {
         path='/dokter/:dokter_id/konfirmasi'
         element={<LayoutHome content={<DokterKonfirmasi />} />}
       />
+      <Route
+        path='/cekkesehatan'
+        element={<LayoutHome content={<Master />} />} />
+      <Route
+        path='/cekkesehatan/bmi'
+        element={<LayoutHome content={<BMICalculator />} />} />
+      <Route
+        path='/cekkesehatan/jantung'
+        element={<LayoutHome content={<HeartRiskCalculator />} />} />
+      <Route
+        path='/cekkesehatan/diabetes'
+        element={<LayoutHome content={<DiabetesChecker />} />} />
     </Routes>
   );
 };

@@ -37,7 +37,10 @@ const BMICalculator = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{
+      height: '80vh',
+      marginTop: '15px'
+    }}>
       <div className="panel">
         <h1 className="text-center">Check your BMI</h1>
         <p id="introText" className="text-center">
