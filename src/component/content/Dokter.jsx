@@ -25,7 +25,7 @@ function Dokter() {
   function createCard(dokter) {
     return (
       <div key={dokter.id} className='col-12 col-md-12 col-lg-3'>
-        <div className='card text-center bg-white pb-2'>
+        <div className='card text-center bg-white pb-2 shadow rounded'>
           <img
             src={dokter.image}
             className='card-img-top'

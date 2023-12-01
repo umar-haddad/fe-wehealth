@@ -7,14 +7,6 @@ function DokterDetail() {
   const { data: dataDetail, isLoading } = useDokterDetail(id, true);
 
   const data = dataDetail?.data?.dokter;
-  const date = new Date(data?.createdAt);
-  const options = {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'Asia/Jakarta',
-  };
-  const formattedDate = date.toLocaleDateString('id-ID', options);
 
   const navigate = useNavigate();
 
@@ -27,9 +19,9 @@ function DokterDetail() {
   };
 
   return (
-    <div className='container-xl margin-top-100'>
+    <div className='container-xl margin-top-100 mb-5'>
       <button
-        className='btn btn-outline-secondary back-button'
+        className='btn btn-outline-secondary back-button mb-5'
         onClick={handleBack}
       >
         <i className='fas fa-arrow-left'></i> Kembali
@@ -50,9 +42,7 @@ function DokterDetail() {
             {/* Kolom Kanan (Informasi Dokter) */}
             <div className='col-md-6'>
               <h1>{data?.name}</h1>
-              <p className='fs-6 text-body-secondary'>
-                {data?.category}, {formattedDate}
-              </p>
+              <p className='fs-6 text-body-secondary'>{data?.category}</p>
               <p>{data?.year} Tahun Pengalaman</p>
 
               {/* Rating/Bintang */}
@@ -63,7 +53,11 @@ function DokterDetail() {
               <p>{data?.content}</p>
 
               {/* Button Chat Sekarang */}
-              <Button type='primary' className='mt-3' onClick={movePayment}>
+              <Button
+                type='primary'
+                className='mt-3 mb-5'
+                onClick={movePayment}
+              >
                 Chat Sekarang
               </Button>
             </div>

@@ -18,6 +18,8 @@ import DetailLayanan from './page/detailLayanan/DetailLayanan';
 import User from './page/user/master/User';
 import DokterPayment from './component/dokter/DokterPayment';
 import ChatListPage from "./page/Chat/ChatListPage";
+import DashboardHome from './page/dashboardHome/dashboardHome';
+import DokterKonfirmasi from './component/dokter/DokterKonfirmasi';
 
 const Router = () => {
   return (
@@ -27,7 +29,7 @@ const Router = () => {
       <Route path='/login' element={<Login />} />
       <Route
         path='/dashboard'
-        element={<LayoutDasboard content={<h1>Hello world</h1>} />}
+        element={<LayoutDasboard content={<DashboardHome />} />}
       />
       <Route
         path='/dashboard/article'
@@ -56,7 +58,7 @@ const Router = () => {
       <Route path='/login' element={<Login />} />
       <Route
         path='/dashboard'
-        element={<LayoutDasboard content={<h1>Hello world</h1>} />}
+        element={<LayoutDasboard content={<DashboardHome />} />}
       />
       <Route
         path='/dashboard/article'
@@ -120,7 +122,10 @@ const Router = () => {
       />
       <Route
         path='/chat'
-        element={<LayoutHome content={<ChatListPage />} />}
+        element={<LayoutHome content={<ChatListPage />} />} />
+      <Route
+        path='/dokter/:dokter_id/konfirmasi'
+        element={<LayoutHome content={<DokterKonfirmasi />} />}
       />
     </Routes>
   );
