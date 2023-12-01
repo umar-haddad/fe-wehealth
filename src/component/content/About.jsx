@@ -14,9 +14,9 @@ function About() {
                 <h2>Apa itu WeHealth?</h2>
                 <p>
                   WeHealth merupakan pintu akses kesehatan yang mudah dijangkau,
-                  memberikan informasi kesehatan, menyediakan akses cepat ke
-                  sumber medis terdekat, menghubungkan pengguna dengan
-                  profesional kesehatan.
+                  memberikan informasi kesehatan, menyediakan fitur untuk cek
+                  kesehatanmu, menghubungkan pengguna dengan profesional
+                  kesehatan.
                 </p>
                 <a href='#' className='btn btn-primary'>
                   Learn More

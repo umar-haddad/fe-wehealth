@@ -9,6 +9,8 @@ const Logout = ({ children }) => {
    const handleLogout = () => {
       Cookies.remove("token");
       Cookies.remove("email");
+      Cookies.remove('role');
+      Cookies.remove('id');
       navigate("/");
    }
 
