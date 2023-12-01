@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import HeartRiskCalculator from "../../component/cekkesehatan/cekJantung";
 
 export default function AboutUs() {
   return (
@@ -54,6 +55,7 @@ export default function AboutUs() {
                 </p>
               </div>
             </div>
+            <HeartRiskCalculator />
           </div>
         </div>
       </div>
