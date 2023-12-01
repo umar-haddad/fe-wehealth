@@ -24,6 +24,9 @@ function Login() {
       const response = await axios.post(`${URL}/api/v1/auth/login`, data);
       Cookies.set("token", response.data?.data?.access_token, { expires: 1 });
       Cookies.set("email", email, { expires: 1 });
+      Cookies.set('role', response.data?.data?.user.role, { expires: 1 });
+      Cookies.set('id', response.data?.data?.user._id, { expires: 1 });
+      Cookies.set('name', response.data?.data?.user.first_name, { expires: 1 });
       message.success(response.data?.message);
       navigate("/");
     } catch (error) {
