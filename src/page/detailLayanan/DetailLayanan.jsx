@@ -1,4 +1,4 @@
-import './detailLayanan.css';
+import './DetailLayanan.css';
 
 function DetailLayanan() {
   return (
