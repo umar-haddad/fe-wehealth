@@ -24,63 +24,71 @@ const BMICalculator = () => {
     const bmi = (weightValue / (heightInMeters * heightInMeters)).toFixed(1);
 
     if (bmi <= 18.5) {
-      setMeasure(`Your BMI is ${bmi}, which means you are underweight.`);
+      setMeasure(`BMI Anda adalah ${bmi}, kekurangan berat badan.`);
     } else if (bmi >= 18.5 && bmi <= 24.9) {
-      setMeasure(`Your BMI is ${bmi}, which means you have a normal weight.`);
+      setMeasure(`BMI Anda adalah ${bmi}, berat badan normal.`);
     } else if (bmi >= 25 && bmi <= 29.9) {
-      setMeasure(`Your BMI is ${bmi}, which means you are overweight.`);
+      setMeasure(`BMI Anda adalah ${bmi},kelebihan berat badan.`);
     } else if (bmi >= 30) {
-      setMeasure(`Your BMI is ${bmi}, which means you are obese.`);
+      setMeasure(`BMI Anda adalah ${bmi}, obesitas`);
     }
 
     setError("");
   };
 
   return (
-    <div className="container" style={{
-      height: '80vh',
-      marginTop: '15px'
-    }}>
-      <div className="panel">
-        <h1 className="text-center">Check your BMI</h1>
-        <p id="introText" className="text-center">
-          Enter your weight and height below to check your BMI results
-        </p>
-        <form>
-          <div className="text-center col-12" id="weightInput">
-            <p>Put your weight in here (KG)</p>
-            <input
-              id="weight"
-              type="number"
-              pattern="[0-9]*"
-              name="a"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-            />
+    <div className="container mt-5 mb-5">
+      <div className="card col-6 mx-auto">
+        <div className="card-body" style={{ height: "80vh" }}>
+          <h1 className="card-title text-center p-3">Check your BMI</h1>
+          <p className="card-text text-center pt-3 pb-4">
+            Masukkan berat dan tinggi badan Anda di bawah ini untuk memeriksa
+            hasil BMI Anda
+          </p>
+          <form>
+            <div className="form-group text-center pb-5">
+              <label htmlFor="weight">berat badan (KG)</label>
+              <input
+                id="weight"
+                type="number"
+                pattern="[0-9]*"
+                className="form-control"
+                name="a"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+              />
+            </div>
+            <div className="form-group text-center">
+              <label htmlFor="height">Tinggi badan (CM)</label>
+              <input
+                id="height"
+                type="number"
+                pattern="[0-9]*"
+                className="form-control"
+                name="b"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+              />
+            </div>
+            <div className="text-center p-3">
+              <div className="text-center">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={calculate}
+                >
+                  Calculate BMI
+                </button>
+              </div>
+            </div>
+          </form>
+          <div id="results" className="text-center mt-3">
+            {error ? (
+              <div className="alert alert-danger">{error}</div>
+            ) : (
+              measure
+            )}
           </div>
-          <div className="text-center col-12 p-5" id="heightInput">
-            <p>And your height in here (CM)</p>
-            <input
-              id="height"
-              type="number"
-              pattern="[0-9]*"
-              name="b"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-            />
-          </div>
-          <div className=" text-center">
-            <button
-              type="button"
-              className="btn btn-primary text-center"
-              onClick={calculate}
-            >
-              Calculate BMI
-            </button>
-          </div>
-        </form>
-        <div id="results" className="text-center">
-          {error ? error : measure}
         </div>
       </div>
     </div>

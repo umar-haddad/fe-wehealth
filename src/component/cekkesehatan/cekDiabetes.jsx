@@ -28,10 +28,10 @@ const DiabetesChecker = () => {
 
   return (
     <div className="container">
-      <div className="card text-center col-12 ">
+      <div className="card text-center col-6 mx-auto ">
         <div className="card-body">
           <div className=" row col-12 my-3">
-            <h1>Diabetes Checker</h1>
+            <h1>Cek Diabetes</h1>
             <div className=" col-12 d-flex flex-column py-3">
               <label htmlFor="beratBadan">Berat Badan (kg): </label>
               <input
@@ -39,7 +39,7 @@ const DiabetesChecker = () => {
                 id="beratBadan"
                 value={beratBadan}
                 onChange={(e) => setBeratBadan(e.target.value)}
-                className="text-center col-12 py-2"
+                className="form-control text-center col-12 py-2"
               />
 
               <label htmlFor="tinggi">Tinggi (cm): </label>
@@ -48,7 +48,7 @@ const DiabetesChecker = () => {
                 id="tinggi"
                 value={tinggi}
                 onChange={(e) => setTinggi(e.target.value)}
-                className="text-center col-12 py-2"
+                className="form-control text-center col-12 py-2"
               />
 
               <label htmlFor="umur">Umur (thn): </label>
@@ -57,7 +57,7 @@ const DiabetesChecker = () => {
                 id="umur"
                 value={umur}
                 onChange={(e) => setUmur(e.target.value)}
-                className="text-center col-12 py-2"
+                className="form-control text-center col-12 py-2"
               />
             </div>
           </div>
