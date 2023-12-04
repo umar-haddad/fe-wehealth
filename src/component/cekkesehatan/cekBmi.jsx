@@ -37,8 +37,13 @@ const BMICalculator = () => {
   };
 
   return (
-    <div className='cekbmi container mt-5 mb-5'>
-      <div className='card col-6 mx-auto'>
+    <div className=' container mt-5 mb-5'>
+      <div
+        className='card col-6 mx-auto'
+        style={{
+          marginTop: '100px',
+        }}
+      >
         <div className='card-body' style={{ height: '80vh' }}>
           <h1 className='card-title text-center p-3'>Check your BMI</h1>
           <p className='card-text text-center pt-3 pb-4'>
@@ -46,8 +51,10 @@ const BMICalculator = () => {
             hasil BMI Anda
           </p>
           <form>
-            <div className='form-group text-center pb-5'>
-              <label htmlFor='weight'>berat badan (KG)</label>
+            <div className='form-group text-center pb-3'>
+              <label htmlFor='weight' className='mb-2'>
+                Berat Badan (KG)
+              </label>
               <input
                 id='weight'
                 type='number'
@@ -59,7 +66,9 @@ const BMICalculator = () => {
               />
             </div>
             <div className='form-group text-center'>
-              <label htmlFor='height'>Tinggi badan (CM)</label>
+              <label htmlFor='height' className='mb-2'>
+                Tinggi badan (CM)
+              </label>
               <input
                 id='height'
                 type='number'

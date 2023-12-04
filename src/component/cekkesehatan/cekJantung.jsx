@@ -33,16 +33,21 @@ const HeartRiskCalculator = () => {
   };
 
   return (
-    <div className='cekjantung container mt-5'>
-      <div className='card mx-auto' style={{ maxWidth: '400px' }}>
+    <div className=' container mt-5'>
+      <div
+        className='card mx-auto text-center'
+        style={{ maxWidth: '600px', marginTop: '100px', marginBottom: '50px' }}
+      >
         <div className='card-body'>
-          <h1 className='card-title text-center'>Kalkulator Resiko Jantung</h1>
+          <h1 className='card-title text-center mb-4'>
+            Kalkulator Resiko Jantung
+          </h1>
           {/* Form untuk memasukkan data pengguna */}
           <div className='mb-3'>
             <label className='form-label'>
               Jenis Kelamin:
               <select
-                className='form-select'
+                className='form-select mt-2'
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
               >
@@ -56,7 +61,7 @@ const HeartRiskCalculator = () => {
               Usia:
               <input
                 type='number'
-                className='form-control'
+                className='form-control mt-2'
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
               />
@@ -67,7 +72,7 @@ const HeartRiskCalculator = () => {
               Tinggi (cm):
               <input
                 type='number'
-                className='form-control'
+                className='form-control mt-2'
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
               />
@@ -78,7 +83,7 @@ const HeartRiskCalculator = () => {
               Berat Badan (kg):
               <input
                 type='number'
-                className='form-control'
+                className='form-control mt-2'
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
               />

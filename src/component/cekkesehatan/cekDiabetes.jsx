@@ -27,8 +27,14 @@ const DiabetesChecker = () => {
   };
 
   return (
-    <div className='cekdiabetes container'>
-      <div className='card text-center col-6 mx-auto '>
+    <div className=' container'>
+      <div
+        className='card text-center col-6 mx-auto'
+        style={{
+          marginTop: '120px',
+          marginBottom: '50px',
+        }}
+      >
         <div className='card-body'>
           <div className=' row col-12 my-3'>
             <h1>Cek Diabetes</h1>
@@ -39,7 +45,7 @@ const DiabetesChecker = () => {
                 id='beratBadan'
                 value={beratBadan}
                 onChange={(e) => setBeratBadan(e.target.value)}
-                className='form-control text-center col-12 py-2'
+                className='form-control text-center col-12 mb-3 mt-2'
               />
 
               <label htmlFor='tinggi'>Tinggi (cm): </label>
@@ -48,7 +54,7 @@ const DiabetesChecker = () => {
                 id='tinggi'
                 value={tinggi}
                 onChange={(e) => setTinggi(e.target.value)}
-                className='form-control text-center col-12 py-2'
+                className='form-control text-center col-12 mb-3 mt-2'
               />
 
               <label htmlFor='umur'>Umur (thn): </label>
@@ -57,12 +63,15 @@ const DiabetesChecker = () => {
                 id='umur'
                 value={umur}
                 onChange={(e) => setUmur(e.target.value)}
-                className='form-control text-center col-12 py-2'
+                className='form-control text-center col-12 mb-3 mt-2'
               />
             </div>
           </div>
 
-          <button className='text-center ' onClick={cekDiabetes}>
+          <button
+            className='text-center btn btn-outline-primary '
+            onClick={cekDiabetes}
+          >
             Cek Diabetes
           </button>
 
