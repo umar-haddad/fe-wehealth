@@ -25,7 +25,7 @@ import Master from './component/cekkesehatan/Master';
 import DiabetesChecker from './component/cekkesehatan/cekDiabetes';
 import HeartRiskCalculator from './component/cekkesehatan/cekJantung';
 import DashboardHome from './page/dashboardHome/DashboardHome';
-import RequireLogin from './component/auth/requireLogin';
+import RequireLogin from './component/auth/RequireLogin';
 
 const Router = () => {
   return (
