@@ -18,7 +18,11 @@ function DokterCard({ dokter }) {
   const ratingValue = dokter.rating || 0;
 
   return (
-    <div className='col-sm-6 col-md-4 col-lg-3'>
+    <div
+      className='col-sm-6 col-md-4 col-lg-3'
+      data-aos='zoom-in'
+      data-aos-duration='1000'
+    >
       <div
         className='card'
         style={{
