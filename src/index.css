@@ -23,8 +23,8 @@
 
 .navbar.color-active {
   background-color: var(--navbar-color);
-  padding: 20px 0;
-  border-bottom: 2px solid #e8e8e8;
+  padding: 5px 0;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .navbar .nav-link a {
