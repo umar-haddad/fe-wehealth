@@ -76,9 +76,9 @@ function DokterPayment() {
   }
 
   return (
-    <Container className='mb-5 mt-3'>
+    <Container className='mb-5 mt-5'>
       <button
-        className='btn btn-outline-secondary back-button mb-5'
+        className='btn btn-outline-secondary back-button mb-5 mt-5'
         onClick={handleBack}
       >
         <i className='fas fa-arrow-left'></i> Kembali
@@ -100,7 +100,7 @@ function DokterPayment() {
 
         {/* Detail Tagihan */}
         <Col lg='6' className='border rounded p-4'>
-          <h3 className='text-center'>Kode Voucher</h3>
+          <h3 className=''>Kode Voucher</h3>
           <input
             id='kodeVoucherInput'
             type='text'
@@ -253,8 +253,11 @@ function DokterPayment() {
         </Modal.Header>
         <Modal.Body>
           <h3>Wallet</h3>
-          <Row className='mb-3'>
-            <Col xs={6}>Gopay</Col>
+          <Row className='mb-4'>
+            <Col xs={6}>
+              <img src='/assets/img/gopay.jpg' width='30%' className='me-4 ' />
+              Gopay
+            </Col>
             <Col xs={6} className='text-end'>
               <Button
                 variant='primary'
@@ -265,7 +268,10 @@ function DokterPayment() {
             </Col>
           </Row>
           <Row className='mb-3'>
-            <Col xs={6}>OVO</Col>
+            <Col xs={6}>
+              <img src='/assets/img/ovo.jpg' width='30%' className='me-4 ' />
+              OVO
+            </Col>
             <Col xs={6} className='text-end'>
               <Button
                 variant='primary'
@@ -276,8 +282,11 @@ function DokterPayment() {
             </Col>
           </Row>
           <h3>Virtual Account</h3>
-          <Row className='mb-3'>
-            <Col xs={6}>BRI</Col>
+          <Row className=''>
+            <Col xs={6}>
+              <img src='/assets/img/bri.png' width='30%' className='me-4 ' />
+              BRI
+            </Col>
             <Col xs={6} className='text-end'>
               <Button
                 variant='primary'
@@ -287,8 +296,11 @@ function DokterPayment() {
               </Button>
             </Col>
           </Row>
-          <Row className='mb-3'>
-            <Col xs={6}>BNI</Col>
+          <Row className=''>
+            <Col xs={6}>
+              <img src='/assets/img/bni.png' width='30%' className='me-4 ' />
+              BNI
+            </Col>
             <Col xs={6} className='text-end'>
               <Button
                 variant='primary'
@@ -298,8 +310,11 @@ function DokterPayment() {
               </Button>
             </Col>
           </Row>
-          <Row className='mb-3'>
-            <Col xs={6}>BCA</Col>
+          <Row className=''>
+            <Col xs={6}>
+              <img src='/assets/img/bca.png' width='30%' className='me-4 ' />
+              BCA
+            </Col>
             <Col xs={6} className='text-end'>
               <Button
                 variant='primary'
@@ -309,8 +324,15 @@ function DokterPayment() {
               </Button>
             </Col>
           </Row>
-          <Row className='mb-3'>
-            <Col xs={6}>PERMATA</Col>
+          <Row className=''>
+            <Col xs={6}>
+              <img
+                src='/assets/img/permata.png'
+                width='30%'
+                className='me-4 '
+              />
+              PERMATA
+            </Col>
             <Col xs={6} className='text-end'>
               <Button
                 variant='primary'
@@ -320,8 +342,15 @@ function DokterPayment() {
               </Button>
             </Col>
           </Row>
-          <Row className='mb-3'>
-            <Col xs={6}>MANDIRI</Col>
+          <Row className=''>
+            <Col xs={6}>
+              <img
+                src='/assets/img/mandiri.png'
+                width='30%'
+                className='me-4 '
+              />
+              MANDIRI
+            </Col>
             <Col xs={6} className='text-end'>
               <Button
                 variant='primary'

@@ -9,17 +9,20 @@ function DokterKonfirmasi() {
   };
 
   return (
-    <Container className='mt-5 mb-5 p-5 text-center border rounded'>
-      <h1>Pembayaran Berhasil!</h1>
-      <p>
-        Terima kasih telah melakukan pembayaran. Konsultasi dengan dokter Anda
-        segera dimulai.
-      </p>
+    <div className='konfirmasi'>
+      <Container className='mt-5 mb-5 p-5 text-center  rounded'>
+        <img src='/assets/img/check.png' width='200px' />
+        <h1>Pembayaran Berhasil!</h1>
+        <p>
+          Terima kasih telah melakukan pembayaran. Konsultasi dengan dokter Anda
+          segera dimulai.
+        </p>
 
-      <Button variant='primary' onClick={handleChatNow}>
-        Chat Dokter Sekarang
-      </Button>
-    </Container>
+        <Button variant='primary' onClick={handleChatNow}>
+          Chat Dokter Sekarang
+        </Button>
+      </Container>
+    </div>
   );
 }
 
