@@ -19,6 +19,7 @@
   width: 100%;
   transition: all 0.2s ease;
   z-index: 9999;
+  background-color: var(--navbar-color);
 }
 
 .navbar.color-active {
