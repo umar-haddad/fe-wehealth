@@ -24,7 +24,7 @@ import BMICalculator from './component/cekkesehatan/cekBmi';
 import Master from './component/cekkesehatan/Master';
 import DiabetesChecker from './component/cekkesehatan/cekDiabetes';
 import HeartRiskCalculator from './component/cekkesehatan/cekJantung';
-import DashboardHome from './page/dashboardHome/dashboardHome';
+import DashboardHome from './page/dashboardHome/DashboardHome';
 
 const Router = () => {
   return (
