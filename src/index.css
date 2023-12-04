@@ -103,3 +103,10 @@ header {
   }
 }
 /* STYLE HOMEPAGE HEADER*/
+.list-cekkesehatan {
+  display: grid;
+  /* make responsive card */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-height: 100vh;
+  gap: 1rem;
+}

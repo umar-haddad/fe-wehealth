@@ -18,6 +18,7 @@ import './LayoutDashboard.css';
 import Logout from '../../component/dashboard/Logout';
 import BreadCrumb from '../../component/dashboard/BreadCrumb';
 import './LayoutDashboard.css';
+import Cookies from "js-cookie";
 
 const { Sider, Content, Header } = Layout;
 
@@ -28,11 +29,11 @@ function LayoutDasboard(props) {
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
-  const email = 'rajasaputeraxii.ipa5';
+  const email = Cookies.get('email');
 
   const handleClickItemUser = (e) => {
     if (e.key === 'profile') navigate('/profile');
-    // else handleLogout();
+    else handleLogout();
   };
 
   const itemsUser = [
@@ -51,6 +52,15 @@ function LayoutDasboard(props) {
   const items2 = [
     { key: 'logout', icon: <LogoutOutlined />, label: <Logout>Logout</Logout> },
   ];
+
+  const handleLogout = () => {
+    console.log('logout');
+    Cookies.remove('token');
+    Cookies.remove('email');
+    Cookies.remove('role');
+    Cookies.remove('id');
+    navigate('/login');
+  };
 
   const handleClickMenu = (param) => {
     if (param.key === '') {
