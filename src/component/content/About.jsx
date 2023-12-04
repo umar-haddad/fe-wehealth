@@ -1,7 +1,12 @@
 function About() {
   return (
     <div>
-      <section id='about' className='about section-padding ' data-aos='zoom-in'>
+      <section
+        id='about'
+        className='about section-padding '
+        data-aos='zoom-in'
+        data-aos-duration='1000'
+      >
         <div className='container'>
           <div className='row'>
             <div className='col-lg-6 col-md-12 col-12'>
