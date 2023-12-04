@@ -25,6 +25,7 @@ import Master from './component/cekkesehatan/Master';
 import DiabetesChecker from './component/cekkesehatan/cekDiabetes';
 import HeartRiskCalculator from './component/cekkesehatan/cekJantung';
 import DashboardHome from './page/dashboardHome/DashboardHome';
+import RequireLogin from './component/auth/requireLogin';
 
 const Router = () => {
   return (
@@ -72,7 +73,15 @@ const Router = () => {
       />
       <Route
         path='/dokter/:dokter_id'
-        element={<LayoutHome content={<DokterDetail />} />}
+        element={
+          <LayoutHome
+            content={
+              <RequireLogin>
+                <DokterDetail />
+              </RequireLogin>
+            }
+          />
+        }
       />
       <Route
         path='/dashboard/user'

@@ -4,11 +4,9 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 
 import { navLinks } from '../../data/index';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Dropdown } from "antd";
+import { Dropdown } from 'antd';
 
-import {
-  UserOutlined,
-} from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 
 const Navbars = () => {
   const [changeColor, setChangeColor] = useState(false);
@@ -34,9 +32,12 @@ const Navbars = () => {
 
   const itemsUser = [
     { key: 'profile', label: <span>Profile</span> },
-    Cookies.get('role') === 'admin' && { key: 'dashboard', label: <span>Dashboard</span> },
+    Cookies.get('role') === 'admin' && {
+      key: 'dashboard',
+      label: <span>Dashboard</span>,
+    },
     { key: 'chat', label: <span>Konsultasi</span> },
-    { key: 'logout', label: <span>Logout</span> }
+    { key: 'logout', label: <span>Logout</span> },
   ];
 
   const changeBackgroundColor = () => {
@@ -63,7 +64,11 @@ const Navbars = () => {
 
   return (
     <div>
-      <Navbar expand='lg' className={changeColor ? 'color-active' : ''}>
+      <Navbar
+        expand='lg'
+        className={changeColor ? 'color-active' : ''}
+        fixed='top'
+      >
         <Container>
           <Navbar.Brand>
             <img src='/assets/img/logo.png' />
