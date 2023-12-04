@@ -110,3 +110,13 @@ header {
   min-height: 100vh;
   gap: 1rem;
 }
+
+.konfirmasi {
+  margin-top: 100px;
+}
+
+.cekjantung,
+.cekdiabetes,
+.cekbmi {
+  margin-top: 100px;
+}

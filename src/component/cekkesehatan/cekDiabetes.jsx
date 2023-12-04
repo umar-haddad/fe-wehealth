@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const DiabetesChecker = () => {
-  const [beratBadan, setBeratBadan] = useState("");
-  const [tinggi, setTinggi] = useState("");
-  const [umur, setUmur] = useState("");
-  const [hasilPemeriksaan, setHasilPemeriksaan] = useState("");
+  const [beratBadan, setBeratBadan] = useState('');
+  const [tinggi, setTinggi] = useState('');
+  const [umur, setUmur] = useState('');
+  const [hasilPemeriksaan, setHasilPemeriksaan] = useState('');
 
   const cekDiabetes = () => {
     const beratBadanNumerik = parseFloat(beratBadan);
@@ -20,53 +20,53 @@ const DiabetesChecker = () => {
     const batasRisiko = 25;
 
     if (risikoDiabetes > batasRisiko && umurNumerik > 30) {
-      setHasilPemeriksaan("Anda memiliki risiko tinggi untuk diabetes.");
+      setHasilPemeriksaan('Anda memiliki risiko tinggi untuk diabetes.');
     } else {
-      setHasilPemeriksaan("Risiko diabetes Anda rendah.");
+      setHasilPemeriksaan('Risiko diabetes Anda rendah.');
     }
   };
 
   return (
-    <div className="container">
-      <div className="card text-center col-6 mx-auto ">
-        <div className="card-body">
-          <div className=" row col-12 my-3">
+    <div className='cekdiabetes container'>
+      <div className='card text-center col-6 mx-auto '>
+        <div className='card-body'>
+          <div className=' row col-12 my-3'>
             <h1>Cek Diabetes</h1>
-            <div className=" col-12 d-flex flex-column py-3">
-              <label htmlFor="beratBadan">Berat Badan (kg): </label>
+            <div className=' col-12 d-flex flex-column py-3'>
+              <label htmlFor='beratBadan'>Berat Badan (kg): </label>
               <input
-                type="text"
-                id="beratBadan"
+                type='text'
+                id='beratBadan'
                 value={beratBadan}
                 onChange={(e) => setBeratBadan(e.target.value)}
-                className="form-control text-center col-12 py-2"
+                className='form-control text-center col-12 py-2'
               />
 
-              <label htmlFor="tinggi">Tinggi (cm): </label>
+              <label htmlFor='tinggi'>Tinggi (cm): </label>
               <input
-                type="text"
-                id="tinggi"
+                type='text'
+                id='tinggi'
                 value={tinggi}
                 onChange={(e) => setTinggi(e.target.value)}
-                className="form-control text-center col-12 py-2"
+                className='form-control text-center col-12 py-2'
               />
 
-              <label htmlFor="umur">Umur (thn): </label>
+              <label htmlFor='umur'>Umur (thn): </label>
               <input
-                type="text"
-                id="umur"
+                type='text'
+                id='umur'
                 value={umur}
                 onChange={(e) => setUmur(e.target.value)}
-                className="form-control text-center col-12 py-2"
+                className='form-control text-center col-12 py-2'
               />
             </div>
           </div>
 
-          <button className="text-center " onClick={cekDiabetes}>
+          <button className='text-center ' onClick={cekDiabetes}>
             Cek Diabetes
           </button>
 
-          <p className="py-5 text-center col-12">{hasilPemeriksaan}</p>
+          <p className='py-5 text-center col-12'>{hasilPemeriksaan}</p>
         </div>
       </div>
     </div>

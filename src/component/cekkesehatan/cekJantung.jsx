@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const HeartRiskCalculator = () => {
   // State untuk menyimpan data pengguna
-  const [gender, setGender] = useState("male");
+  const [gender, setGender] = useState('male');
   const [age, setAge] = useState(30);
   const [height, setHeight] = useState(170);
   const [weight, setWeight] = useState(70);
@@ -24,7 +24,7 @@ const HeartRiskCalculator = () => {
     }
 
     // Menentukan pengaruh gender
-    if (gender === "male") {
+    if (gender === 'male') {
       risk += 1;
     }
 
@@ -33,73 +33,73 @@ const HeartRiskCalculator = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="card mx-auto" style={{ maxWidth: "400px" }}>
-        <div className="card-body">
-          <h1 className="card-title text-center">Kalkulator Resiko Jantung</h1>
+    <div className='cekjantung container mt-5'>
+      <div className='card mx-auto' style={{ maxWidth: '400px' }}>
+        <div className='card-body'>
+          <h1 className='card-title text-center'>Kalkulator Resiko Jantung</h1>
           {/* Form untuk memasukkan data pengguna */}
-          <div className="mb-3">
-            <label className="form-label">
+          <div className='mb-3'>
+            <label className='form-label'>
               Jenis Kelamin:
               <select
-                className="form-select"
+                className='form-select'
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
               >
-                <option value="male">Laki-laki</option>
-                <option value="female">Perempuan</option>
+                <option value='male'>Laki-laki</option>
+                <option value='female'>Perempuan</option>
               </select>
             </label>
           </div>
-          <div className="mb-3">
-            <label className="form-label">
+          <div className='mb-3'>
+            <label className='form-label'>
               Usia:
               <input
-                type="number"
-                className="form-control"
+                type='number'
+                className='form-control'
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
               />
             </label>
           </div>
-          <div className="mb-3">
-            <label className="form-label">
+          <div className='mb-3'>
+            <label className='form-label'>
               Tinggi (cm):
               <input
-                type="number"
-                className="form-control"
+                type='number'
+                className='form-control'
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
               />
             </label>
           </div>
-          <div className="mb-3">
-            <label className="form-label">
+          <div className='mb-3'>
+            <label className='form-label'>
               Berat Badan (kg):
               <input
-                type="number"
-                className="form-control"
+                type='number'
+                className='form-control'
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
               />
             </label>
           </div>
           {/* Tombol untuk menghitung resiko jantung */}
-          <div className="text-center mb-3">
-            <button className="btn btn-primary" onClick={calculateHeartRisk}>
+          <div className='text-center mb-3'>
+            <button className='btn btn-primary' onClick={calculateHeartRisk}>
               Hitung
             </button>
           </div>
           {/* Menampilkan hasil resiko jantung setelah dihitung */}
           {heartRisk !== null && (
             <div>
-              <h2 className="text-center">Tingkat Resiko Jantung:</h2>
-              <p className="text-center">
+              <h2 className='text-center'>Tingkat Resiko Jantung:</h2>
+              <p className='text-center'>
                 {heartRisk === 0
-                  ? "Rendah"
+                  ? 'Rendah'
                   : heartRisk === 1
-                  ? "Sedang"
-                  : "Tinggi"}
+                  ? 'Sedang'
+                  : 'Tinggi'}
               </p>
             </div>
           )}

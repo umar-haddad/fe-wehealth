@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const BMICalculator = () => {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [measure, setMeasure] = useState("");
-  const [error, setError] = useState("");
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
+  const [measure, setMeasure] = useState('');
+  const [error, setError] = useState('');
 
   const calculate = () => {
     const weightValue = parseFloat(weight);
@@ -16,7 +16,7 @@ const BMICalculator = () => {
       weightValue <= 0 ||
       heightValue <= 0
     ) {
-      setError("Please enter valid values for weight and height.");
+      setError('Please enter valid values for weight and height.');
       return;
     }
 
@@ -33,48 +33,48 @@ const BMICalculator = () => {
       setMeasure(`BMI Anda adalah ${bmi}, obesitas`);
     }
 
-    setError("");
+    setError('');
   };
 
   return (
-    <div className="container mt-5 mb-5">
-      <div className="card col-6 mx-auto">
-        <div className="card-body" style={{ height: "80vh" }}>
-          <h1 className="card-title text-center p-3">Check your BMI</h1>
-          <p className="card-text text-center pt-3 pb-4">
+    <div className='cekbmi container mt-5 mb-5'>
+      <div className='card col-6 mx-auto'>
+        <div className='card-body' style={{ height: '80vh' }}>
+          <h1 className='card-title text-center p-3'>Check your BMI</h1>
+          <p className='card-text text-center pt-3 pb-4'>
             Masukkan berat dan tinggi badan Anda di bawah ini untuk memeriksa
             hasil BMI Anda
           </p>
           <form>
-            <div className="form-group text-center pb-5">
-              <label htmlFor="weight">berat badan (KG)</label>
+            <div className='form-group text-center pb-5'>
+              <label htmlFor='weight'>berat badan (KG)</label>
               <input
-                id="weight"
-                type="number"
-                pattern="[0-9]*"
-                className="form-control"
-                name="a"
+                id='weight'
+                type='number'
+                pattern='[0-9]*'
+                className='form-control'
+                name='a'
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
               />
             </div>
-            <div className="form-group text-center">
-              <label htmlFor="height">Tinggi badan (CM)</label>
+            <div className='form-group text-center'>
+              <label htmlFor='height'>Tinggi badan (CM)</label>
               <input
-                id="height"
-                type="number"
-                pattern="[0-9]*"
-                className="form-control"
-                name="b"
+                id='height'
+                type='number'
+                pattern='[0-9]*'
+                className='form-control'
+                name='b'
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
               />
             </div>
-            <div className="text-center p-3">
-              <div className="text-center">
+            <div className='text-center p-3'>
+              <div className='text-center'>
                 <button
-                  type="button"
-                  className="btn btn-primary"
+                  type='button'
+                  className='btn btn-primary'
                   onClick={calculate}
                 >
                   Calculate BMI
@@ -82,9 +82,9 @@ const BMICalculator = () => {
               </div>
             </div>
           </form>
-          <div id="results" className="text-center mt-3">
+          <div id='results' className='text-center mt-3'>
             {error ? (
-              <div className="alert alert-danger">{error}</div>
+              <div className='alert alert-danger'>{error}</div>
             ) : (
               measure
             )}
