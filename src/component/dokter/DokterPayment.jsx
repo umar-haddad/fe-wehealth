@@ -76,9 +76,9 @@ function DokterPayment() {
   }
 
   return (
-    <Container className='mb-5 mt-3'>
+    <Container className='mb-5 mt-5'>
       <button
-        className='btn btn-outline-secondary back-button mb-5'
+        className='btn btn-outline-secondary back-button mb-5 mt-5'
         onClick={handleBack}
       >
         <i className='fas fa-arrow-left'></i> Kembali
