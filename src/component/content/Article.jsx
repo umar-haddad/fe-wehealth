@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Article() {
   const URL = import.meta.env.VITE_BASE_URL;
@@ -39,9 +40,12 @@ function Article() {
           <div className='card-body'>
             <h5 className='card-title'>{article.title}</h5>
             <p className='card-text'>{article.description}</p>
-            <a href='#' className='btn btn-primary mt-auto'>
-              Baca Selengkapnya
-            </a>
+            <Link
+              to={`/article/${article._id}`}
+              className='text-decoration-none fw-medium'
+            >
+              <button className='btn btn-primary mt-auto'>Read more</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -62,9 +66,11 @@ function Article() {
           </div>
           <div className='row list-article'>{articles.map(createCard)}</div>
           <div className='text-center mt-5'>
-            <button className='btn btn-outline-primary text-center'>
-              Baca Artikel Lainnya
-            </button>
+            <Link to='/article'>
+              <button className='btn btn-outline-primary text-center'>
+                Baca Artikel Lainnya
+              </button>
+            </Link>
           </div>
         </div>
       </section>

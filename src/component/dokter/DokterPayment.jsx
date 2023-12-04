@@ -57,6 +57,7 @@ function DokterPayment() {
   const handlePayWithWallet = (method) => {
     setSelectedPayment(method); // Simpan informasi pembayaran yang dipilih
     handleClosePaymentOptionsModal();
+    handleShowPaymentModal();
   };
 
   const handlePayWithVirtualAccount = (bank) => {
@@ -82,10 +83,10 @@ function DokterPayment() {
       >
         <i className='fas fa-arrow-left'></i> Kembali
       </button>
-      <Row className='d-flex align-items-stretch'>
+      <Row className='col-xs-12 d-flex align-items-stretch'>
         <h1 className='mb-5'>Rincian Pembayaran</h1>
         {/* Informasi Dokter */}
-        <Col className='col-6'>
+        <Col lg='6' className=''>
           <img
             src={dokterData?.data?.dokter?.image}
             alt={dokterData?.data?.dokter?.name}
@@ -98,8 +99,8 @@ function DokterPayment() {
         </Col>
 
         {/* Detail Tagihan */}
-        <Col className='col-6 border rounded p-4'>
-          <h3>Kode Voucher</h3>
+        <Col lg='6' className='border rounded p-4'>
+          <h3 className='text-center'>Kode Voucher</h3>
           <input
             id='kodeVoucherInput'
             type='text'

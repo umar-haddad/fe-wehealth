@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Dokter() {
   const URL = import.meta.env.VITE_BASE_URL;
@@ -25,7 +26,11 @@ function Dokter() {
   function createCard(dokter) {
     return (
       <div key={dokter.id} className='col-12 col-md-12 col-lg-3'>
-        <div className='card text-center bg-white pb-2 shadow rounded'>
+        <div
+          className='card text-center bg-white pb-2 shadow rounded'
+          data-aos='zoom-in'
+          data-aos-duration='1000'
+        >
           <img
             src={dokter.image}
             className='card-img-top'
@@ -35,9 +40,12 @@ function Dokter() {
           <div className='card-body'>
             <h5 className='card-title'>{dokter.name}</h5>
             <p className='card-text'>{dokter.category}</p>
-            <a href='#' className='btn btn-primary mt-auto'>
-              Chat Dokter
-            </a>
+            <Link
+              to={`/dokter/${dokter._id}`}
+              className='text-decoration-none fw-medium'
+            >
+              <button className='btn btn-primary mt-auto'>Chat Dokter</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -46,11 +54,7 @@ function Dokter() {
 
   return (
     <div>
-      <section
-        id='dokter'
-        className='dokter section-padding'
-        data-aos='zoom-in'
-      >
+      <section id='dokter' className='dokter section-padding'>
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>
@@ -62,9 +66,11 @@ function Dokter() {
           </div>
           <div className='row list-dokter'>{dokters.map(createCard)}</div>
           <div className='text-center mt-5'>
-            <button className='btn btn-outline-primary text-center'>
-              Lihat Lebih Banyak
-            </button>
+            <Link to='/dokter'>
+              <button className='btn btn-outline-primary text-center'>
+                Lihat Lebih Banyak
+              </button>
+            </Link>
           </div>
         </div>
       </section>
