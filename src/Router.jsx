@@ -18,12 +18,13 @@ import DetailLayanan from './page/detailLayanan/DetailLayanan';
 import User from './page/user/master/User';
 import DokterPayment from './component/dokter/DokterPayment';
 import ChatListPage from './page/Chat/ChatListPage';
-import DashboardHome from './page/dashboardHome/dashboardHome';
+
 import DokterKonfirmasi from './component/dokter/DokterKonfirmasi';
 import BMICalculator from './component/cekkesehatan/cekBmi';
 import Master from './component/cekkesehatan/Master';
 import DiabetesChecker from './component/cekkesehatan/cekDiabetes';
 import HeartRiskCalculator from './component/cekkesehatan/cekJantung';
+import DashboardHome from './page/dashboardHome/dashboardHome';
 
 const Router = () => {
   return (
