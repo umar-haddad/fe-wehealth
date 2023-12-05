@@ -38,6 +38,7 @@ function ArticleCard({ article }) {
           <Link
             to={`/article/${article._id}`}
             className='text-decoration-none fw-medium'
+            onClick={() => window.scrollTo(0, 0)}
           >
             Read more
           </Link>

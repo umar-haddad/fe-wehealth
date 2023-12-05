@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Container, Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Container, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function DokterReview() {
   const navigate = useNavigate();
@@ -16,7 +16,8 @@ function DokterReview() {
   };
 
   const handleSubmit = () => {
-    navigate('/review-success');
+    navigate('/thanks');
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -53,11 +54,12 @@ function DokterReview() {
             />
           </Form.Group>
 
-          <Link to='/thanks'>
-            <button className='btn btn-outline-primary text-center mt-2 '>
-              Kirim Review
-            </button>
-          </Link>
+          <button
+            type='submit'
+            className='btn btn-outline-primary text-center mt-2'
+          >
+            Kirim Review
+          </button>
         </Form>
       </Container>
     </div>

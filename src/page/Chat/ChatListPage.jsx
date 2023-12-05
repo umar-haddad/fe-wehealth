@@ -187,7 +187,7 @@ const ChatListPage = () => {
                     >
                       Send
                     </button>
-                    <Link to='/review'>
+                    <Link to='/review' onClick={() => window.scrollTo(0, 0)}>
                       <button className='btn btn-outline-primary text-center mt-2 '>
                         Akhiri Chat
                       </button>
