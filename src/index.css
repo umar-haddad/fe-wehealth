@@ -15,7 +15,7 @@
 /* STYLE NAVBAR */
 .navbar {
   position: fixed;
-  padding: 15px 0;
+  padding: 5px 0;
   width: 100%;
   transition: all 0.2s ease;
   z-index: 9999;
@@ -103,6 +103,36 @@ header {
     margin-inline: auto;
   }
 }
+
+@media screen and (max-width: 575px) {
+  .homepage .header-box h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .homepage .header-box h1 {
+    font-size: 2.4rem;
+  }
+
+  .homepage .header-box p {
+    font-size: 14px;
+  }
+
+  .homepage .header-box img {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .homepage .header-box h1 {
+    font-size: 2rem;
+  }
+
+  .homepage .header-box p {
+    font-size: 12px;
+  }
+}
 /* STYLE HOMEPAGE HEADER*/
 .list-cekkesehatan {
   display: grid;
@@ -114,4 +144,15 @@ header {
 
 .konfirmasi {
   margin-top: 100px;
+}
+
+.cekbmi {
+  width: 100%;
+  box-shadow: #000000;
+  background: linear-gradient(
+    to left,
+    #d8ebfe,
+    #94b5f8,
+    #d3e8f8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
