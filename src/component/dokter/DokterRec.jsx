@@ -57,7 +57,7 @@ function DokterRec({ articleCategory }) {
             ))}
           </div>
           <div className='text-center mt-5'>
-            <Link to='/dokter'>
+            <Link to='/dokter' onClick={() => window.scrollTo(0, 0)}>
               <button className='btn btn-outline-primary text-center'>
                 Lihat Lebih Banyak
               </button>

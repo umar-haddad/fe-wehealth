@@ -22,6 +22,7 @@ function DokterPayment() {
 
   const moveKonfirmasi = () => {
     navigate(`/dokter/${id}/konfirmasi`);
+    window.scrollTo(0, 0);
   };
 
   const handleShowPromoModal = () => {
@@ -63,6 +64,7 @@ function DokterPayment() {
   const handlePayWithVirtualAccount = (bank) => {
     setSelectedPayment(bank); // Simpan informasi pembayaran yang dipilih
     handleClosePaymentOptionsModal();
+    handleShowPaymentModal();
   };
 
   const calculateTotalPayment = () => {

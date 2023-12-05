@@ -16,6 +16,7 @@ function DokterDetail() {
 
   const movePayment = () => {
     navigate(`/dokter/${data._id}/payment`);
+    window.scrollTo(0, 0);
   };
 
   return (

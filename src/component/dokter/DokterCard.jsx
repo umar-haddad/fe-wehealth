@@ -74,6 +74,7 @@ function DokterCard({ dokter }) {
           <Link
             to={`/dokter/${dokter._id}`}
             className='mt-auto text-decoration-none fw-medium'
+            onClick={() => window.scrollTo(0, 0)}
           >
             Chat Dokter
           </Link>
