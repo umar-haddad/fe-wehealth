@@ -133,6 +133,7 @@ function DokterPayment() {
           <Row className='mb-3'>
             <Col xs={8}>Total Pembayaran</Col>
             <Col xs={4} className='text-end'>
+              <span>Rp. </span>
               {calculateTotalPayment()}
             </Col>
           </Row>
@@ -213,12 +214,14 @@ function DokterPayment() {
             <Row className='mb-3'>
               <Col xs={8}>Total pesanan</Col>
               <Col xs={4} className='text-end'>
+                <span>Rp. </span>
                 {calculateTotalPayment()}
               </Col>
             </Row>
             <Row className='mb-3'>
               <Col xs={8}>Promo</Col>
               <Col xs={4} className='text-end'>
+                <span>Rp. </span>
                 {selectedPromo ? selectedPromo.discount : 0}
               </Col>
             </Row>
