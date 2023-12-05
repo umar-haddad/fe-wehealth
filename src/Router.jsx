@@ -26,6 +26,8 @@ import DiabetesChecker from './component/cekkesehatan/cekDiabetes';
 import HeartRiskCalculator from './component/cekkesehatan/cekJantung';
 import DashboardHome from './page/dashboardHome/DashboardHome';
 import RequireLogin from './component/auth/RequireLogin';
+import DokterReview from './component/dokter/DokterReview';
+import ThankYou from './component/dokter/ThankYou';
 
 const Router = () => {
   return (
@@ -112,6 +114,12 @@ const Router = () => {
         path='/cekkesehatan/diabetes'
         element={<LayoutHome content={<DiabetesChecker />} />}
       />
+
+      <Route
+        path='/review'
+        element={<LayoutHome content={<DokterReview />} />}
+      />
+      <Route path='/thanks' element={<LayoutHome content={<ThankYou />} />} />
     </Routes>
   );
 };
