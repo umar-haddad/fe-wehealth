@@ -156,3 +156,15 @@ header {
     #d3e8f8
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.star-rating {
+  font-size: 50px;
+}
+
+.star-filled {
+  color: gold;
+}
+
+.star-empty {
+  color: lightgray;
+}
