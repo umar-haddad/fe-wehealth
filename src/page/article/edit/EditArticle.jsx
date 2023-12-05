@@ -104,8 +104,6 @@ const EditArticle = ({ id, onUpdate, onCancel, show }) => {
   };
 
   const handleCancelModal = () => {
-    form.resetFields();
-    setFileList([]);
     setNewData({});
     onCancel();
   };

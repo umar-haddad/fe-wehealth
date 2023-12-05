@@ -99,8 +99,6 @@ const EditDokter = ({ id, onUpdate, onCancel, show }) => {
   };
 
   const handleCancelModal = () => {
-    form.resetFields();
-    setFileList([]);
     setNewData({});
     onCancel();
   };
