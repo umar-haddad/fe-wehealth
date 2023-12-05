@@ -107,7 +107,7 @@ const ChatListPage = () => {
           user_id: userId,
           name: Cookies.get('name'),
           avatar:
-            userId == 1
+            userId == '6568704108fbbfb4eaac4019'
               ? 'https://i.pravatar.cc/150?img=1'
               : 'https://i.pravatar.cc/150?img=2',
           message: inputMessage,
