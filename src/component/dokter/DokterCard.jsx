@@ -59,10 +59,14 @@ function DokterCard({ dokter }) {
           <p className='card-text text-clamp'>{dokter.category}</p>
 
           {/* Tambahkan Tahun */}
-          <p className='card-text text-clamp'>{dokter.year} Tahun Pengalaman</p>
+          <p className='card-text text-clamp'>
+            <i className='fa-solid fa-briefcase-medical me-2'></i>
+            {dokter.year} Tahun Pengalaman
+          </p>
 
           {/* Tambahkan Rating/Bintang */}
           <div className='rating'>
+            <i className='fa-solid fa-thumbs-up me-2'></i>
             <Rate
               disabled
               defaultValue={ratingValue}
@@ -76,7 +80,7 @@ function DokterCard({ dokter }) {
             className='mt-auto text-decoration-none fw-medium'
             onClick={() => window.scrollTo(0, 0)}
           >
-            Chat Dokter
+            <button className='btn btn-primary mt-3'>Chat Dokter</button>
           </Link>
         </div>
       </div>
