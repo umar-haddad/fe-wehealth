@@ -12,7 +12,8 @@ import {
 import ModalLoadingComponent from '../../component/loader/ModalLoadingComponent.jsx';
 import ChatMessageComponent from './components/ChatMessageComponent.jsx';
 import './ChatListPage.css';
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
+import { Link } from 'react-router-dom';
 
 const ChatListPage = () => {
   const userId = Cookies.get('id');
@@ -22,7 +23,6 @@ const ChatListPage = () => {
   const [chat, setChat] = useState({});
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
-
 
   const getChatByFilter = () => {
     setIsLoading(true);
@@ -41,17 +41,15 @@ const ChatListPage = () => {
         setMessages(doc.data().messages);
       });
     });
-    setIsLoading(false)
+    setIsLoading(false);
     return () => unsubscribe;
   };
 
   const getChatsList = () => {
     setIsLoading(true);
     const q = query(
-      collection(db, 'chats'), or(
-        where('user_id_1', '==', userId),
-        where('user_id_2', '==', userId),
-      )
+      collection(db, 'chats'),
+      or(where('user_id_1', '==', userId), where('user_id_2', '==', userId))
     );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const chats = [];
@@ -65,7 +63,7 @@ const ChatListPage = () => {
       });
       setChats(chats);
     });
-    setIsLoading(false)
+    setIsLoading(false);
     return () => unsubscribe();
   };
 
@@ -92,7 +90,6 @@ const ChatListPage = () => {
   //   console.log('Document written with ID: ', docRef.id);
   // };
 
-
   useEffect(() => {
     getChatsList();
   }, []);
@@ -118,43 +115,46 @@ const ChatListPage = () => {
         },
       ],
     });
-    setInputMessage('')
+    setInputMessage('');
   };
 
   return (
-    <div className="container mt-5 mb-5">
+    <div className='container mt-5 mb-5'>
       {/* <button className="btn btn-primary" onClick={() => createNewChat()}>
         new chat
       </button> */}
-      <div className="row">
-        <div className="col-3">
-          <div className="list-group">
+      <div className='chatting row'>
+        <div className='col-3'>
+          <div className='list-group'>
             {chats.map((chat, index) => (
               <button
                 key={index}
-                type="button"
-                className="list-group-item list-group-item-action"
-              // onClick={() =>
-              //   setUserId2(chat.user_id_2)
-              // }
+                type='button'
+                className='list-group-item list-group-item-action'
+                // onClick={() =>
+                //   setUserId2(chat.user_id_2)
+                // }
               >
                 Chat konsultasi {index + 1}
               </button>
             ))}
           </div>
         </div>
-        <div className="col-9">
-          <ModalLoadingComponent isShow={isLoading} message="Get Data..." />
-          <div className="chat-container">
-            <div className="row">
-              <div className="col-12">
-                <div className="row">
-                  <div className="col-12">
+        <div className='col-9'>
+          <ModalLoadingComponent isShow={isLoading} message='Get Data...' />
+          <div className='chat-container'>
+            <div className='row'>
+              <div className='col-12'>
+                <div className='row'>
+                  <div className='col-12'>
                     <h2>Konsultasi</h2>
                   </div>
                 </div>
-                <div className="row" style={{ height: '500px', overflow: 'auto' }}>
-                  <div className="col-12">
+                <div
+                  className='row '
+                  style={{ height: '300px', overflow: 'auto' }}
+                >
+                  <div className='col-12'>
                     {messages.map((message, index) => {
                       return (
                         <ChatMessageComponent
@@ -166,14 +166,14 @@ const ChatListPage = () => {
                     })}
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-12">
-                    <div className="form-group">
-                      <label htmlFor="content">Message</label>
+                <div className='row'>
+                  <div className='col-12'>
+                    <div className='form-group'>
+                      <label htmlFor='content'>Message</label>
                       <textarea
-                        className="form-control"
-                        id="content"
-                        rows="3"
+                        className='form-control'
+                        id='content'
+                        rows='3'
                         onChange={(e) => {
                           setInputMessage(e.target.value);
                         }}
@@ -181,12 +181,17 @@ const ChatListPage = () => {
                       ></textarea>
                     </div>
                     <button
-                      type="button"
-                      className="btn btn-primary mt-1"
+                      type='button'
+                      className='btn btn-primary mt-2 me-3'
                       onClick={sendMessageToFirestore}
                     >
                       Send
                     </button>
+                    <Link to='/review'>
+                      <button className='btn btn-outline-primary text-center mt-2 '>
+                        Akhiri Chat
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -194,7 +199,7 @@ const ChatListPage = () => {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 
