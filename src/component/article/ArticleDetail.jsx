@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useArticleDetail } from '../../hooks/useArticleDetail';
 import { Skeleton } from 'antd';
+import DokterRec from '../dokter/DokterRec';
 
 function ArticleDetail() {
   const { article_id: id } = useParams();
@@ -56,6 +57,7 @@ function ArticleDetail() {
             <div
               dangerouslySetInnerHTML={{ __html: transformHTML(data?.content) }}
             />
+            <DokterRec articleCategory={data?.category} />
           </>
         )}
       </div>
