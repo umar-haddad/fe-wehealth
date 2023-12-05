@@ -14,6 +14,7 @@ function DokterRec({ articleCategory }) {
       Pencernaan: 'Kesehtan Umum',
       'Diet dan Nutrisi': 'Kesehatan Umum',
       'Sehat dan Bugar': 'Kesehatan Umum',
+      'Kesehatan Anak': 'Spesialis Anak',
     };
 
     return categoryMapping[articleCategory] || articleCategory;
