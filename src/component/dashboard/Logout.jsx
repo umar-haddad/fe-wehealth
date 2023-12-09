@@ -1,16 +1,28 @@
 import { Popconfirm } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import propTypes from "prop-types";
+import Cookies from "js-cookie";
 
 const Logout = ({ children }) => {
+   const navigate = useNavigate();
+
+   const handleLogout = () => {
+      Cookies.remove("token");
+      Cookies.remove("email");
+      Cookies.remove('role');
+      Cookies.remove('id');
+      navigate("/");
+   }
+
+
    return (
       <Popconfirm
          okText="Logout"
          cancelText="Batal"
          title="Yakin ingin keluar ?"
-      // onConfirm={
-      //    console.log('logout')
-      // }
+         onConfirm={
+            handleLogout
+         }
       >
          <Link className="link-logout">{children}</Link>
       </Popconfirm>
